@@ -7,8 +7,10 @@ All templates are based on the default **ASP.NET Web Application** template in *
 
 As a developer you can make use of these templates in several ways:
 
-- *copy* one of these projects manually as a starting point, when you want to kickstart a new sensenet ECM solution. This will save you the process of creating a new web application and importing all the necessary sensenet ECM packages.
+- *copy* one of these projects manually as a starting point, when you want to kickstart a **new sensenet ECM solution**. This will save you the process of creating a new web application and importing all the necessary sensenet ECM packages.
 - use these projects in your *builds* as a skeleton of a complete website.
+
+> Do not forget to **update NuGet packages** before using the templates, because there may be newer versions available of those components than the installed ones in these templates.
 
 Please look for *readme* files in solution subfolders in this repository to see which sensenet ECM packages are installed in that solution.
 
