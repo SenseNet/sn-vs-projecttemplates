@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,24 +48,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxMin, Version=4.51.4507.18296, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.0.0-beta2\lib\net451\AjaxMin.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.WebPages.7.0.0-beta22\lib\net451\AjaxMin.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.84.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\ICSharpCode.SharpZipLib.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
     <Reference Include="Ionic.Zip, Version=1.8.4.28, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Ionic.Zip.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Ionic.Zip.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\itextsharp.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net, Version=2.9.4.2, Culture=neutral, PublicKeyToken=85089178b9ac3181, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Lucene.Net.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Lucene.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -72,8 +74,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Exchange.WebServices, Version=14.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Microsoft.Exchange.WebServices.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Microsoft.Exchange.WebServices.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.3\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
@@ -84,40 +85,28 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.Database, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Microsoft.Practices.EnterpriseLibrary.Logging.Database.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Microsoft.Practices.ServiceLocation.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Microsoft.Practices.Unity.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Microsoft.Practices.Unity.Configuration.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Microsoft.Practices.Unity.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity.Interception, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\Microsoft.Practices.Unity.Interception.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.Web.Preview, Version=1.3.61025.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.0.0-beta2\lib\net451\Microsoft.Web.Preview.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\Microsoft.Practices.Unity.Interception.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -136,20 +125,16 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="SenseNet.Configuration, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\SenseNet.Configuration.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\SenseNet.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.ContentRepository, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\SenseNet.ContentRepository.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\SenseNet.ContentRepository.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Notification, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Notification.7.0.0-beta0\lib\net451\SenseNet.Notification.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Notification.7.0.0-beta1\lib\net451\SenseNet.Notification.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Notification.Portlets, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Notification.Portlets.7.0.0-beta0\lib\net451\SenseNet.Notification.Portlets.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="SenseNet.Notification.Portlets, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Notification.Portlets.7.0.0-beta1\lib\net451\SenseNet.Notification.Portlets.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Preview, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Preview.7.0.0-beta2\lib\net451\SenseNet.Preview.dll</HintPath>
@@ -164,28 +149,24 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="SenseNet.Services, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\SenseNet.Services.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\SenseNet.Services.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Storage, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\SenseNet.Storage.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\SenseNet.Storage.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.TaskManagement.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.TaskManagement.Core.1.1.0.0\lib\net45\SenseNet.TaskManagement.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SenseNet.TokenAuthentication, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.0.0-beta41\lib\net451\SenseNet.TokenAuthentication.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Services.7.0.0-beta46\lib\net451\SenseNet.TokenAuthentication.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Tools, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Tools.2.1.1\lib\net451\SenseNet.Tools.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SenseNet.WebPages, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.0.0-beta2\lib\net451\SenseNet.WebPages.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.WebPages.7.0.0-beta22\lib\net451\SenseNet.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Workflow, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Workflow.7.0.0-beta0\lib\net451\SenseNet.Workflow.dll</HintPath>
@@ -211,8 +192,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Ajax, Version=3.0.31106.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.0.0-beta2\lib\net451\System.Web.Ajax.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.WebPages.7.0.0-beta22\lib\net451\System.Web.Ajax.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -358,13 +338,13 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Admin\bin\SnAdmin.exe.config" />
+    <Content Include="Admin\tools\install-workspaces.zip" />
+    <Content Include="Admin\tools\install-workflow.zip" />
+    <Content Include="Admin\tools\install-notification.zip" />
+    <Content Include="Admin\tools\install-services.zip" />
     <Content Include="App_Browsers\ie.browser" />
     <Content Include="App_Browsers\FormRewriterAllBrowsers.browser" />
     <Content Include="Admin\tools\install-webpages.zip" />
-    <Content Include="Admin\tools\install-workspaces.zip" />
-    <Content Include="Admin\tools\install-workflow.zip" />
-    <Content Include="Admin\tools\install-services.zip" />
-    <Content Include="Admin\tools\install-notification.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -415,7 +395,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Tools\SnAdminRuntime.exe.config" />
+    <Content Include="Tools\SnAdminRuntime.exe.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
