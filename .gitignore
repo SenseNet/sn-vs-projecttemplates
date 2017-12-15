@@ -286,4 +286,5 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
-/src/SnWebApplication/SnWebApplication/App_Data/LuceneIndex
+
+**/SnWebApplication/App_Data/LuceneIndex

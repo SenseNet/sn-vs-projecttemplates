@@ -132,10 +132,10 @@
       <HintPath>..\packages\SenseNet.Services.7.0.0\lib\net451\SenseNet.ContentRepository.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Notification, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Notification.7.0.0-beta1\lib\net451\SenseNet.Notification.dll</HintPath>
+      <HintPath>..\packages\SenseNet.Notification.7.0.0\lib\net451\SenseNet.Notification.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Notification.Portlets, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Notification.Portlets.7.0.0-beta1\lib\net451\SenseNet.Notification.Portlets.dll</HintPath>
+      <HintPath>..\packages\SenseNet.Notification.Portlets.7.0.0\lib\net451\SenseNet.Notification.Portlets.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.OAuth.Google, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.OAuth.Google.1.0.0\lib\net451\SenseNet.OAuth.Google.dll</HintPath>
@@ -172,20 +172,16 @@
       <HintPath>..\packages\SenseNet.WebPages.7.0.0\lib\net451\SenseNet.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Workflow, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workflow.7.0.0-beta0\lib\net451\SenseNet.Workflow.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Workflow.7.0.0\lib\net451\SenseNet.Workflow.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Workflow.Design, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workflow.7.0.0-beta0\lib\net451\SenseNet.Workflow.Design.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Workflow.7.0.0\lib\net451\SenseNet.Workflow.Design.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Workflow.Portlets, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workflow.Portlets.7.0.0-beta0\lib\net451\SenseNet.Workflow.Portlets.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Workflow.Portlets.7.0.0\lib\net451\SenseNet.Workflow.Portlets.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Workspaces, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workspaces.7.0.0-beta2\lib\net451\SenseNet.Workspaces.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\SenseNet.Workspaces.7.0.0\lib\net451\SenseNet.Workspaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
