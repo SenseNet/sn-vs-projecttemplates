@@ -139,7 +139,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="SenseNet.Security.EF6SecurityStore, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Security.EF6SecurityStore.2.3.0.0\lib\net45\SenseNet.Security.EF6SecurityStore.dll</HintPath>
+      <HintPath>..\packages\SenseNet.Security.EF6SecurityStore.2.3.0\lib\net45\SenseNet.Security.EF6SecurityStore.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SenseNet.Services, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
