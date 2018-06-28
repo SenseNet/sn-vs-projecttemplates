@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxMin, Version=4.51.4507.18296, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.1.0\lib\net451\AjaxMin.dll</HintPath>
+      <HintPath>..\packages\SenseNet.WebPages.7.2.0\lib\net461\AjaxMin.dll</HintPath>
     </Reference>
     <Reference Include="Common, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Common.7.2.0\lib\netstandard2.0\Common.dll</HintPath>
@@ -128,11 +128,11 @@
     <Reference Include="SenseNet.ContentRepository, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Services.7.2.0\lib\net461\SenseNet.ContentRepository.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Notification, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Notification.7.1.0\lib\net451\SenseNet.Notification.dll</HintPath>
+    <Reference Include="SenseNet.Notification, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Notification.7.2.0\lib\net461\SenseNet.Notification.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Notification.Portlets, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Notification.Portlets.7.1.0\lib\net451\SenseNet.Notification.Portlets.dll</HintPath>
+    <Reference Include="SenseNet.Notification.Portlets, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Notification.Portlets.7.2.0\lib\net461\SenseNet.Notification.Portlets.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.OAuth.Google, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.OAuth.Google.1.0.0\lib\net451\SenseNet.OAuth.Google.dll</HintPath>
@@ -177,20 +177,20 @@
     <Reference Include="SenseNet.Tools, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Tools.3.0.0\lib\netstandard2.0\SenseNet.Tools.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.WebPages, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.1.0\lib\net451\SenseNet.WebPages.dll</HintPath>
+    <Reference Include="SenseNet.WebPages, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.WebPages.7.2.0\lib\net461\SenseNet.WebPages.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Workflow, Version=7.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workflow.7.1.1\lib\net451\SenseNet.Workflow.dll</HintPath>
+    <Reference Include="SenseNet.Workflow, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Workflow.7.2.0\lib\net461\SenseNet.Workflow.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Workflow.Design, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workflow.7.1.1\lib\net451\SenseNet.Workflow.Design.dll</HintPath>
+    <Reference Include="SenseNet.Workflow.Design, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Workflow.7.2.0\lib\net461\SenseNet.Workflow.Design.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Workflow.Portlets, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workflow.Portlets.7.1.0\lib\net451\SenseNet.Workflow.Portlets.dll</HintPath>
+    <Reference Include="SenseNet.Workflow.Portlets, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Workflow.Portlets.7.2.0\lib\net461\SenseNet.Workflow.Portlets.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Workspaces, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workspaces.7.1.0\lib\net451\SenseNet.Workspaces.dll</HintPath>
+    <Reference Include="SenseNet.Workspaces, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Workspaces.7.2.0\lib\net461\SenseNet.Workspaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -223,7 +223,7 @@
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Ajax, Version=3.0.31106.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.1.0\lib\net451\System.Web.Ajax.dll</HintPath>
+      <HintPath>..\packages\SenseNet.WebPages.7.2.0\lib\net461\System.Web.Ajax.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -366,16 +366,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Admin\tools\install-workspaces.zip" />
+    <Content Include="Admin\tools\install-oauth-google.zip" />
+    <Content Include="Admin\tools\install-preview.zip" />
+    <Content Include="Admin\bin\SnAdmin.exe.config" />
+    <Content Include="Admin\tools\install-services.zip" />
     <Content Include="Admin\tools\install-notification.zip" />
     <Content Include="App_Browsers\ie.browser" />
     <Content Include="App_Browsers\FormRewriterAllBrowsers.browser" />
     <Content Include="Admin\tools\install-webpages.zip" />
-    <Content Include="Admin\tools\install-oauth-google.zip" />
-    <Content Include="Admin\tools\install-preview.zip" />
-    <Content Include="Admin\bin\SnAdmin.exe.config" />
     <Content Include="Admin\tools\install-workflow.zip" />
-    <Content Include="Admin\tools\install-services.zip" />
+    <Content Include="Admin\tools\install-workspaces.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
