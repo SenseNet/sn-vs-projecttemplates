@@ -52,7 +52,7 @@
       <HintPath>..\packages\SenseNet.WebPages.7.2.2\lib\net461\AjaxMin.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
-      <HintPath>..\packages\SenseNet.Services.7.4.0\lib\net461\itextsharp.dll</HintPath>
+      <HintPath>..\packages\SenseNet.Services.7.5.0\lib\net461\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net, Version=2.9.4.301, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Search.Lucene29.Lucene.Net.2.9.4.301\lib\netstandard2.0\Lucene.Net.dll</HintPath>
@@ -69,7 +69,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Exchange.WebServices, Version=14.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.4.0\lib\net461\Microsoft.Exchange.WebServices.dll</HintPath>
+      <HintPath>..\packages\SenseNet.Services.7.5.0\lib\net461\Microsoft.Exchange.WebServices.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.2.4\lib\net451\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
@@ -93,11 +93,11 @@
     <Reference Include="SenseNet.Common, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Common.7.2.0\lib\netstandard2.0\SenseNet.Common.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Configuration, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.4.0\lib\net461\SenseNet.Configuration.dll</HintPath>
+    <Reference Include="SenseNet.Configuration, Version=7.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Services.7.5.0\lib\net461\SenseNet.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.ContentRepository, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.4.0\lib\net461\SenseNet.ContentRepository.dll</HintPath>
+    <Reference Include="SenseNet.ContentRepository, Version=7.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Services.7.5.0\lib\net461\SenseNet.ContentRepository.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Notification, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Notification.7.2.0\lib\net461\SenseNet.Notification.dll</HintPath>
@@ -114,8 +114,8 @@
     <Reference Include="SenseNet.Preview.Controller, Version=7.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Preview.Install.7.1.1\lib\net461\SenseNet.Preview.Controller.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Search, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Search.2.0.0\lib\netstandard2.0\SenseNet.Search.dll</HintPath>
+    <Reference Include="SenseNet.Search, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Search.2.1.0\lib\netstandard2.0\SenseNet.Search.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Search.Lucene29, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Search.Lucene29.7.2.0\lib\netstandard2.0\SenseNet.Search.Lucene29.dll</HintPath>
@@ -126,17 +126,17 @@
     <Reference Include="SenseNet.Search.Lucene29.Local, Version=7.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Search.Lucene29.Local.7.2.1\lib\net461\SenseNet.Search.Lucene29.Local.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Security, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Security.3.0.0\lib\netstandard2.0\SenseNet.Security.dll</HintPath>
+    <Reference Include="SenseNet.Security, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Security.4.0.0\lib\netstandard2.0\SenseNet.Security.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Security.EF6SecurityStore, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Security.EF6SecurityStore.3.0.1\lib\net461\SenseNet.Security.EF6SecurityStore.dll</HintPath>
+    <Reference Include="SenseNet.Security.EF6SecurityStore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Security.EF6SecurityStore.4.0.0\lib\net461\SenseNet.Security.EF6SecurityStore.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Services, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.4.0\lib\net461\SenseNet.Services.dll</HintPath>
+    <Reference Include="SenseNet.Services, Version=7.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Services.7.5.0\lib\net461\SenseNet.Services.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Storage, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.4.0\lib\net461\SenseNet.Storage.dll</HintPath>
+    <Reference Include="SenseNet.Storage, Version=7.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Services.7.5.0\lib\net461\SenseNet.Storage.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.TaskManagement.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.TaskManagement.Core.2.0.0\lib\netstandard2.0\SenseNet.TaskManagement.Core.dll</HintPath>
