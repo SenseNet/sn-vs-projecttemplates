@@ -49,7 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxMin, Version=4.51.4507.18296, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.2.2.1\lib\net461\AjaxMin.dll</HintPath>
+      <HintPath>..\packages\SenseNet.WebPages.7.2.2.2\lib\net461\AjaxMin.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
       <HintPath>..\packages\SenseNet.Services.7.5.0.3\lib\net461\itextsharp.dll</HintPath>
@@ -144,8 +144,8 @@
     <Reference Include="SenseNet.Tools, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Tools.3.1.0\lib\netstandard2.0\SenseNet.Tools.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.WebPages, Version=7.2.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.2.2.1\lib\net461\SenseNet.WebPages.dll</HintPath>
+    <Reference Include="SenseNet.WebPages, Version=7.2.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.WebPages.7.2.2.2\lib\net461\SenseNet.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Workflow, Version=7.2.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Workflow.7.2.0.1\lib\net461\SenseNet.Workflow.dll</HintPath>
@@ -196,7 +196,7 @@
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Ajax, Version=3.0.31106.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.2.2.1\lib\net461\System.Web.Ajax.dll</HintPath>
+      <HintPath>..\packages\SenseNet.WebPages.7.2.2.2\lib\net461\System.Web.Ajax.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -344,12 +344,12 @@
     <Content Include="Admin\tools\install-notification.zip" />
     <Content Include="Admin\tools\install-oauth-google.zip" />
     <Content Include="Admin\tools\install-preview.zip" />
-    <Content Include="App_Browsers\ie.browser" />
-    <Content Include="App_Browsers\FormRewriterAllBrowsers.browser" />
-    <Content Include="Admin\tools\install-webpages.zip" />
     <Content Include="Admin\tools\install-workspaces.zip" />
     <Content Include="Admin\tools\install-workflow.zip" />
     <Content Include="Admin\tools\install-services.zip" />
+    <Content Include="App_Browsers\ie.browser" />
+    <Content Include="App_Browsers\FormRewriterAllBrowsers.browser" />
+    <Content Include="Admin\tools\install-webpages.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
