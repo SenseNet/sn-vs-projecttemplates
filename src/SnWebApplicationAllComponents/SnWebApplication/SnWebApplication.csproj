@@ -102,8 +102,8 @@
     <Reference Include="SenseNet.Notification.Portlets, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Notification.Portlets.7.2.0\lib\net461\SenseNet.Notification.Portlets.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.OAuth.Google, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.OAuth.Google.1.1.0\lib\net461\SenseNet.OAuth.Google.dll</HintPath>
+    <Reference Include="SenseNet.OAuth.Google, Version=1.1.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.OAuth.Google.1.1.0.1\lib\net461\SenseNet.OAuth.Google.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Preview, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Preview.7.1.0\lib\netstandard2.0\SenseNet.Preview.dll</HintPath>
@@ -342,7 +342,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Admin\bin\SnAdmin.exe.config" />
     <Content Include="Admin\tools\install-notification.zip" />
-    <Content Include="Admin\tools\install-oauth-google.zip" />
     <Content Include="Admin\tools\install-preview.zip" />
     <Content Include="Admin\tools\install-workflow.zip" />
     <Content Include="Admin\tools\install-workspaces.zip" />
@@ -350,6 +349,7 @@
     <Content Include="App_Browsers\ie.browser" />
     <Content Include="App_Browsers\FormRewriterAllBrowsers.browser" />
     <Content Include="Admin\tools\install-webpages.zip" />
+    <Content Include="Admin\tools\install-oauth-google.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
