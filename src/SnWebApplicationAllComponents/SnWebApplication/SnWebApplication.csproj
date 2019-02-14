@@ -49,10 +49,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxMin, Version=4.51.4507.18296, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.2.3.1\lib\net461\AjaxMin.dll</HintPath>
-    </Reference>
-    <Reference Include="itextsharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
-      <HintPath>..\packages\SenseNet.Services.7.5.1.3\lib\net461\itextsharp.dll</HintPath>
+      <HintPath>..\packages\SenseNet.WebPages.7.2.3.2\lib\net461\AjaxMin.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net, Version=2.9.4.301, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Search.Lucene29.Lucene.Net.2.9.4.301\lib\netstandard2.0\Lucene.Net.dll</HintPath>
@@ -68,9 +65,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Exchange.WebServices, Version=14.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.5.1.3\lib\net461\Microsoft.Exchange.WebServices.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.2.4\lib\net451\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
     </Reference>
@@ -93,8 +87,8 @@
     <Reference Include="SenseNet.Common, Version=7.2.0.2, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Common.7.2.0.2\lib\netstandard2.0\SenseNet.Common.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.ContentRepository, Version=7.5.1.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.5.1.3\lib\net461\SenseNet.ContentRepository.dll</HintPath>
+    <Reference Include="SenseNet.ContentRepository, Version=7.5.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Services.7.5.1.4\lib\net461\SenseNet.ContentRepository.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Notification, Version=7.2.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Notification.7.2.0.1\lib\net461\SenseNet.Notification.dll</HintPath>
@@ -129,11 +123,11 @@
     <Reference Include="SenseNet.Security.EF6SecurityStore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Security.EF6SecurityStore.4.0.0\lib\net461\SenseNet.Security.EF6SecurityStore.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Services, Version=7.5.1.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.5.1.3\lib\net461\SenseNet.Services.dll</HintPath>
+    <Reference Include="SenseNet.Services, Version=7.5.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Services.7.5.1.4\lib\net461\SenseNet.Services.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Storage, Version=7.5.1.3, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.5.1.3\lib\net461\SenseNet.Storage.dll</HintPath>
+    <Reference Include="SenseNet.Storage, Version=7.5.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Services.7.5.1.4\lib\net461\SenseNet.Storage.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.TaskManagement.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.TaskManagement.Core.2.0.0\lib\netstandard2.0\SenseNet.TaskManagement.Core.dll</HintPath>
@@ -144,17 +138,17 @@
     <Reference Include="SenseNet.Tools, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Tools.3.1.0\lib\netstandard2.0\SenseNet.Tools.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.WebPages, Version=7.2.3.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.2.3.1\lib\net461\SenseNet.WebPages.dll</HintPath>
+    <Reference Include="SenseNet.WebPages, Version=7.2.3.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.WebPages.7.2.3.2\lib\net461\SenseNet.WebPages.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Workflow, Version=7.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workflow.7.2.1\lib\net461\SenseNet.Workflow.dll</HintPath>
+    <Reference Include="SenseNet.Workflow, Version=7.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Workflow.7.2.1.1\lib\net461\SenseNet.Workflow.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Workflow.Design, Version=7.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workflow.7.2.1\lib\net461\SenseNet.Workflow.Design.dll</HintPath>
+      <HintPath>..\packages\SenseNet.Workflow.7.2.1.1\lib\net461\SenseNet.Workflow.Design.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Workflow.Portlets, Version=7.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Workflow.Portlets.7.2.1\lib\net461\SenseNet.Workflow.Portlets.dll</HintPath>
+    <Reference Include="SenseNet.Workflow.Portlets, Version=7.2.1.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Workflow.Portlets.7.2.1.1\lib\net461\SenseNet.Workflow.Portlets.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Workspaces, Version=7.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Workspaces.7.3.0\lib\net461\SenseNet.Workspaces.dll</HintPath>
@@ -196,7 +190,7 @@
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Ajax, Version=3.0.31106.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.2.3.1\lib\net461\System.Web.Ajax.dll</HintPath>
+      <HintPath>..\packages\SenseNet.WebPages.7.2.3.2\lib\net461\System.Web.Ajax.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -342,14 +336,14 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Admin\bin\SnAdmin.exe.config" />
     <Content Include="Admin\tools\install-preview.zip" />
-    <Content Include="Admin\tools\install-workflow.zip" />
     <Content Include="Admin\tools\install-workspaces.zip" />
+    <Content Include="Admin\tools\install-oauth-google.zip" />
+    <Content Include="Admin\tools\install-notification.zip" />
     <Content Include="Admin\tools\install-services.zip" />
     <Content Include="App_Browsers\ie.browser" />
     <Content Include="App_Browsers\FormRewriterAllBrowsers.browser" />
     <Content Include="Admin\tools\install-webpages.zip" />
-    <Content Include="Admin\tools\install-oauth-google.zip" />
-    <Content Include="Admin\tools\install-notification.zip" />
+    <Content Include="Admin\tools\install-workflow.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
