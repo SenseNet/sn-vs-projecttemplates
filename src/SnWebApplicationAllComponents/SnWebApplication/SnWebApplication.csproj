@@ -102,8 +102,8 @@
     <Reference Include="SenseNet.Preview, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Preview.7.1.0\lib\netstandard2.0\SenseNet.Preview.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Preview.Controller, Version=7.1.1.2, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Preview.Install.7.1.1.2\lib\netstandard2.0\SenseNet.Preview.Controller.dll</HintPath>
+    <Reference Include="SenseNet.Preview.Controller, Version=7.1.1.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Preview.Install.7.1.1.3\lib\netstandard2.0\SenseNet.Preview.Controller.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Search, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Search.2.1.0\lib\netstandard2.0\SenseNet.Search.dll</HintPath>
