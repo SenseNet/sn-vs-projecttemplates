@@ -134,8 +134,8 @@
     <Reference Include="SenseNet.Security.EF6SecurityStore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Security.EF6SecurityStore.4.0.0\lib\net461\SenseNet.Security.EF6SecurityStore.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Services, Version=7.6.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.6.3\lib\net461\SenseNet.Services.dll</HintPath>
+    <Reference Include="SenseNet.Services, Version=7.6.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Services.7.6.4\lib\net461\SenseNet.Services.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Storage, Version=7.6.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.ContentRepository.7.6.3\lib\netstandard2.0\SenseNet.Storage.dll</HintPath>
