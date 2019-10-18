@@ -113,11 +113,11 @@
     <Reference Include="SenseNet.ContentRepository, Version=7.7.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.ContentRepository.7.7.1\lib\netstandard2.0\SenseNet.ContentRepository.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Notification, Version=7.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Notification.7.2.1\lib\net461\SenseNet.Notification.dll</HintPath>
+    <Reference Include="SenseNet.Notification, Version=7.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Notification.7.2.2\lib\net461\SenseNet.Notification.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Notification.Portlets, Version=7.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Notification.Portlets.7.2.1\lib\net461\SenseNet.Notification.Portlets.dll</HintPath>
+    <Reference Include="SenseNet.Notification.Portlets, Version=7.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Notification.Portlets.7.2.2\lib\net461\SenseNet.Notification.Portlets.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.OAuth.Google, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.OAuth.Google.1.1.1\lib\net461\SenseNet.OAuth.Google.dll</HintPath>
@@ -376,7 +376,6 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Admin\bin\SnAdmin.exe.config" />
-    <Content Include="Admin\tools\install-notification.zip" />
     <Content Include="Admin\tools\install-oauth-google.zip" />
     <Content Include="Admin\tools\install-workspaces.zip" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -407,6 +406,7 @@
     <Content Include="Admin\tools\install-webpages.zip" />
     <Content Include="Admin\tools\install-workflow.zip" />
     <Content Include="Admin\tools\install-services.zip" />
+    <Content Include="Admin\tools\install-notification.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
