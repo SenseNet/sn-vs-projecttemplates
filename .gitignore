@@ -288,3 +288,5 @@ __pycache__/
 *.xsd.cs
 
 **/SnWebApplication/App_Data/LuceneIndex
+/src/netcore/SnWebApplication/SnWebApplication/App_Data
+/src/netcore/SnWebApplicationWithIdentity/SnWebApplicationWithIdentity/App_Data
