@@ -6,11 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
-    <PackageReference Include="SenseNet.ContentRepository" Version="7.7.2.2" />
+    <PackageReference Include="SenseNet.ContentRepository" Version="7.7.2.3" />
     <PackageReference Include="SenseNet.Search.Lucene29.Local" Version="7.4.0" />
     <PackageReference Include="SenseNet.Security.EFCSecurityStore" Version="3.0.0" />
-    <PackageReference Include="SenseNet.Services.Core.Install" Version="0.0.0.2" />
+    <PackageReference Include="SenseNet.Services.Core.Install" Version="0.0.0.4" />
     <PackageReference Include="System.Runtime.Caching" Version="4.6.0" />
   </ItemGroup>
 
