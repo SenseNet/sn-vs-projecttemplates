@@ -51,7 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxMin, Version=4.51.4507.18296, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.2.4\lib\net461\AjaxMin.dll</HintPath>
+      <HintPath>..\packages\SenseNet.WebPages.7.3.0\lib\net461\AjaxMin.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net, Version=2.9.4.301, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Search.Lucene29.Lucene.Net.2.9.4.301\lib\netstandard2.0\Lucene.Net.dll</HintPath>
@@ -67,6 +67,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Extensions.Configuration, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.2.4\lib\net451\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
     </Reference>
@@ -79,62 +88,80 @@
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Nito.AsyncEx.Coordination, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Coordination.5.0.0\lib\netstandard2.0\Nito.AsyncEx.Coordination.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.AsyncEx.Tasks, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.AsyncEx.Tasks.5.0.0\lib\netstandard2.0\Nito.AsyncEx.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Collections.Deque, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Collections.Deque.1.0.4\lib\netstandard2.0\Nito.Collections.Deque.dll</HintPath>
+    </Reference>
+    <Reference Include="Nito.Disposables, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nito.Disposables.2.0.0\lib\netstandard2.0\Nito.Disposables.dll</HintPath>
+    </Reference>
     <Reference Include="OpenPop, Version=2.0.6.1120, Culture=neutral, PublicKeyToken=6bdb97f144b7efc8, processorArchitecture=MSIL">
       <HintPath>..\packages\OpenPop.NET.2.0.6.1120\lib\net40\OpenPop.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SenseNet.BlobStorage, Version=7.3.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.BlobStorage.7.3.4\lib\netstandard2.0\SenseNet.BlobStorage.dll</HintPath>
+    <Reference Include="SenseNet.BlobStorage, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.BlobStorage.7.4.0\lib\netstandard2.0\SenseNet.BlobStorage.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Common, Version=7.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Common.7.3.0\lib\netstandard2.0\SenseNet.Common.dll</HintPath>
+    <Reference Include="SenseNet.Common, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Common.7.4.0\lib\netstandard2.0\SenseNet.Common.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.ContentRepository, Version=7.6.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.ContentRepository.7.6.1\lib\netstandard2.0\SenseNet.ContentRepository.dll</HintPath>
+    <Reference Include="SenseNet.ContentRepository, Version=7.7.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.ContentRepository.7.7.4\lib\netstandard2.0\SenseNet.ContentRepository.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Preview, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Preview.7.1.0\lib\netstandard2.0\SenseNet.Preview.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Search, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Search.2.1.0\lib\netstandard2.0\SenseNet.Search.dll</HintPath>
+    <Reference Include="SenseNet.Search, Version=2.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Search.2.3.0\lib\netstandard2.0\SenseNet.Search.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Search.Lucene29, Version=7.2.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Search.Lucene29.7.2.1\lib\netstandard2.0\SenseNet.Search.Lucene29.dll</HintPath>
+    <Reference Include="SenseNet.Search.Lucene29, Version=7.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Search.Lucene29.7.3.0\lib\netstandard2.0\SenseNet.Search.Lucene29.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Search.Lucene29.Common, Version=7.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Search.Lucene29.Common.7.3.0\lib\netstandard2.0\SenseNet.Search.Lucene29.Common.dll</HintPath>
+    <Reference Include="SenseNet.Search.Lucene29.Common, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Search.Lucene29.Common.7.4.0\lib\netstandard2.0\SenseNet.Search.Lucene29.Common.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Search.Lucene29.Local, Version=7.3.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Search.Lucene29.Local.7.3.0\lib\netstandard2.0\SenseNet.Search.Lucene29.Local.dll</HintPath>
+    <Reference Include="SenseNet.Search.Lucene29.Local, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Search.Lucene29.Local.7.4.0\lib\netstandard2.0\SenseNet.Search.Lucene29.Local.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Security, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Security.4.0.0\lib\netstandard2.0\SenseNet.Security.dll</HintPath>
+    <Reference Include="SenseNet.Security, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Security.4.1.0\lib\netstandard2.0\SenseNet.Security.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Security.EF6SecurityStore, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Security.EF6SecurityStore.4.0.0\lib\net461\SenseNet.Security.EF6SecurityStore.dll</HintPath>
+    <Reference Include="SenseNet.Security.EF6SecurityStore, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Security.EF6SecurityStore.4.1.0\lib\net461\SenseNet.Security.EF6SecurityStore.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Services, Version=7.6.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Services.7.6.1\lib\net461\SenseNet.Services.dll</HintPath>
+    <Reference Include="SenseNet.Services, Version=7.7.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Services.7.7.4\lib\net461\SenseNet.Services.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Storage, Version=7.6.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.ContentRepository.7.6.1\lib\netstandard2.0\SenseNet.Storage.dll</HintPath>
+    <Reference Include="SenseNet.Storage, Version=7.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.ContentRepository.7.7.4\lib\netstandard2.0\SenseNet.Storage.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.TaskManagement.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.TaskManagement.Core.2.0.0\lib\netstandard2.0\SenseNet.TaskManagement.Core.dll</HintPath>
+    <Reference Include="SenseNet.TaskManagement.Core, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.TaskManagement.Core.2.0.1\lib\netstandard2.0\SenseNet.TaskManagement.Core.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.TokenAuthentication, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.TokenAuthentication.7.4.0\lib\netstandard2.0\SenseNet.TokenAuthentication.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Tools, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.Tools.3.1.0\lib\netstandard2.0\SenseNet.Tools.dll</HintPath>
+    <Reference Include="SenseNet.Tools, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Tools.3.2.0\lib\netstandard2.0\SenseNet.Tools.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.WebPages, Version=7.2.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.2.4\lib\net461\SenseNet.WebPages.dll</HintPath>
+    <Reference Include="SenseNet.WebPages, Version=7.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.WebPages.7.3.0\lib\net461\SenseNet.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Workspaces, Version=7.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Workspaces.7.3.1\lib\net461\SenseNet.Workspaces.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Configuration.ConfigurationManager.4.5.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
     </Reference>
@@ -154,7 +181,17 @@
     <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.2.4\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security.AccessControl, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.AccessControl.4.5.0\lib\net461\System.Security.AccessControl.dll</HintPath>
@@ -168,7 +205,7 @@
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Ajax, Version=3.0.31106.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.2.4\lib\net461\System.Web.Ajax.dll</HintPath>
+      <HintPath>..\packages\SenseNet.WebPages.7.3.0\lib\net461\System.Web.Ajax.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -313,11 +350,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Admin\bin\SnAdmin.exe.config" />
-    <Content Include="App_Browsers\ie.browser" />
-    <Content Include="App_Browsers\FormRewriterAllBrowsers.browser" />
-    <Content Include="Admin\tools\install-webpages.zip" />
     <Content Include="Admin\tools\install-workspaces.zip" />
-    <Content Include="Admin\tools\install-services.zip" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -340,6 +373,10 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="App_Browsers\ie.browser" />
+    <Content Include="App_Browsers\FormRewriterAllBrowsers.browser" />
+    <Content Include="Admin\tools\install-webpages.zip" />
+    <Content Include="Admin\tools\install-services.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
@@ -403,7 +440,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Tools\SnAdminRuntime.exe.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -413,6 +449,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Tools\SnAdminRuntime.exe.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
