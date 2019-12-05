@@ -377,7 +377,6 @@
     <Content Include="Content\Site.css" />
     <Content Include="Admin\bin\SnAdmin.exe.config" />
     <Content Include="Admin\tools\install-oauth-google.zip" />
-    <Content Include="Admin\tools\install-workspaces.zip" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -407,6 +406,7 @@
     <Content Include="Admin\tools\install-workflow.zip" />
     <Content Include="Admin\tools\install-notification.zip" />
     <Content Include="Admin\tools\install-services.zip" />
+    <Content Include="Admin\tools\install-workspaces.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
