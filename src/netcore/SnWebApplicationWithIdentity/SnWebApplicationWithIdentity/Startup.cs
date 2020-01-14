@@ -1,14 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.EntityFrameworkCore;
-using SnWebApplicationWithIdentity.Data;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -40,13 +33,24 @@ namespace SnWebApplicationWithIdentity
         public void ConfigureServices(IServiceCollection services)
         {
             // [sensenet]: Identity store
-            services.AddSenseNetIdentity()
+            services.AddSenseNetIdentity(
+                    "/Root/IMS/BuiltIn/Portal",
+                    new[] { "/Root/IMS/BuiltIn/Portal/Administrators" })
                 .AddDefaultUI();
 
             services.AddRazorPages();
 
-            // [sensenet]: Start repository
-            StartRepository();
+            // using Kestrel:
+            services.Configure<KestrelServerOptions>(options =>
+            {
+                options.AllowSynchronousIO = true;
+            });
+
+            // using IIS:
+            services.Configure<IISServerOptions>(options =>
+            {
+                options.AllowSynchronousIO = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -73,6 +77,9 @@ namespace SnWebApplicationWithIdentity
 
             app.UseAuthorization();
 
+            // [sensenet]: OData
+            app.UseSenseNetOdata();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -80,38 +87,25 @@ namespace SnWebApplicationWithIdentity
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
-
-            // [sensenet]: OData
-            app.UseSenseNetOdata();
-
-            // [sensenet] stop repository and release index lock file
-            applicationLifetime.ApplicationStopping.Register(OnShutdown);
         }
 
-        private static RepositoryInstance _repository;
-        private void StartRepository()
+        internal static RepositoryBuilder GetRepositoryBuilder(IConfiguration configuration, string currentDirectory)
         {
             var repositoryBuilder = new RepositoryBuilder()
-                .UseConfiguration(Configuration)
+                .UseConfiguration(configuration)
                 .UseLogger(new SnFileSystemEventLogger())
                 //.UseTracer(new SnFileSystemTracer())
                 .UseAccessProvider(new UserAccessProvider())
                 .UseDataProvider(new MsSqlDataProvider())
                 .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
-                .UseLucene29LocalSearchEngine($"{Environment.ContentRootPath}\\App_Data\\LocalIndex")
+                .UseLucene29LocalSearchEngine($"{currentDirectory}\\App_Data\\LocalIndex")
                 .StartWorkflowEngine(false)
                 .DisableNodeObservers()
                 .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
 
             Providers.Instance.PropertyCollector = new EventPropertyCollector();
 
-            _repository = Repository.Start(repositoryBuilder);
-        }
-
-        internal static void OnShutdown()
-        {
-            SnTrace.System.Write("Shutting down web application...");
-            _repository?.Dispose();
+            return repositoryBuilder;
         }
     }
 }

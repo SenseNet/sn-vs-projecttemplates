@@ -1,11 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using SenseNet.ContentRepository;
+using SenseNet.Diagnostics;
 
 namespace SnWebApplicationWithIdentity
 {
@@ -13,9 +11,17 @@ namespace SnWebApplicationWithIdentity
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var builder = CreateHostBuilder(args);
+            var host = builder.Build();
+            var config = host.Services.GetService(typeof(IConfiguration)) as IConfiguration;
 
-            Startup.OnShutdown();
+            var repositoryBuilder = Startup.GetRepositoryBuilder(config, Environment.CurrentDirectory);
+
+            using (Repository.Start(repositoryBuilder))
+            {
+                SnTrace.EnableAll();
+                host.Run();
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
