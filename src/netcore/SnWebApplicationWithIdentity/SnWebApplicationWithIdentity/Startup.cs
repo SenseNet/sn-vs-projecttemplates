@@ -94,7 +94,7 @@ namespace SnWebApplicationWithIdentity
             var repositoryBuilder = new RepositoryBuilder()
                 .UseConfiguration(configuration)
                 .UseLogger(new SnFileSystemEventLogger())
-                //.UseTracer(new SnFileSystemTracer())
+                .UseTracer(new SnFileSystemTracer())
                 .UseAccessProvider(new UserAccessProvider())
                 .UseDataProvider(new MsSqlDataProvider())
                 .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
