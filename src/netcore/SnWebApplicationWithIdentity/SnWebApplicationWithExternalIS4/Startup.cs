@@ -17,7 +17,7 @@ using SenseNet.ContentRepository;
 using SenseNet.ContentRepository.Security;
 using SenseNet.ContentRepository.Storage.Data.MsSqlClient;
 using SenseNet.Diagnostics;
-using SenseNet.Identity.Experimental;
+//using SenseNet.Identity.Experimental;
 using SenseNet.OData;
 using SenseNet.Search.Lucene29;
 using SenseNet.Security.EFCSecurityStore;
@@ -40,10 +40,10 @@ namespace SnWebApplicationWithExternalIS4
         public void ConfigureServices(IServiceCollection services)
         {
             // [sensenet]: Identity store
-            services.AddSenseNetIdentity(
-                "/Root/IMS/BuiltIn/Portal",
-                new[] {"/Root/IMS/BuiltIn/Portal/Administrators"})
-                .AddDefaultUI();
+            //services.AddSenseNetIdentity(
+            //    "/Root/IMS/BuiltIn/Portal",
+            //    new[] {"/Root/IMS/BuiltIn/Portal/Administrators"})
+            //    .AddDefaultUI();
 
             services.AddRazorPages();
             services.AddControllersWithViews();
@@ -65,7 +65,8 @@ namespace SnWebApplicationWithExternalIS4
                     options.RequireHttpsMetadata = false;
 
                     //options.ClientId = "mvc";
-                    options.ClientId = "localhost44317";
+                    //options.ClientId = "localhost44317";
+                    options.ClientId = "localhost5002";
                     options.ClientSecret = "secret";
                     //options.ResponseType = "code";
                     options.ResponseType = "code id_token";
@@ -101,7 +102,7 @@ namespace SnWebApplicationWithExternalIS4
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -113,14 +114,7 @@ namespace SnWebApplicationWithExternalIS4
 
             // [sensenet]: OData
             app.UseSenseNetOdata();
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Home}/{action=Index}/{id?}");
-            //});
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();

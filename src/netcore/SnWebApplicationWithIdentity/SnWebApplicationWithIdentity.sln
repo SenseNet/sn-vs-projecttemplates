@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnWebApplicationWithIdentit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnConsoleInstaller", "SnConsoleInstaller\SnConsoleInstaller.csproj", "{424C74DC-F1FD-4DF8-8311-1EF450587AC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnWebApplicationWithExternalIS4", "SnWebApplicationWithExternalIS4\SnWebApplicationWithExternalIS4.csproj", "{B108F8F9-E01A-4270-9C35-68A4C906D0F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnWebApplicationWithExternalIS4", "SnWebApplicationWithExternalIS4\SnWebApplicationWithExternalIS4.csproj", "{B108F8F9-E01A-4270-9C35-68A4C906D0F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
