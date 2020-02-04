@@ -51,7 +51,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AjaxMin, Version=4.51.4507.18296, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.3.1\lib\net461\AjaxMin.dll</HintPath>
+      <HintPath>..\packages\SenseNet.WebPages.7.3.2\lib\net461\AjaxMin.dll</HintPath>
     </Reference>
     <Reference Include="Lucene.Net, Version=2.9.4.301, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Search.Lucene29.Lucene.Net.2.9.4.301\lib\netstandard2.0\Lucene.Net.dll</HintPath>
@@ -161,8 +161,8 @@
     <Reference Include="SenseNet.Tools, Version=3.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Tools.3.2.1\lib\netstandard2.0\SenseNet.Tools.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.WebPages, Version=7.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.3.1\lib\net461\SenseNet.WebPages.dll</HintPath>
+    <Reference Include="SenseNet.WebPages, Version=7.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.WebPages.7.3.2\lib\net461\SenseNet.WebPages.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Workflow, Version=7.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Workflow.7.3.0\lib\net461\SenseNet.Workflow.dll</HintPath>
@@ -230,7 +230,7 @@
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Ajax, Version=3.0.31106.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.WebPages.7.3.1\lib\net461\System.Web.Ajax.dll</HintPath>
+      <HintPath>..\packages\SenseNet.WebPages.7.3.2\lib\net461\System.Web.Ajax.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -403,10 +403,10 @@
     <Content Include="Admin\tools\install-workflow.zip" />
     <Content Include="Admin\tools\install-notification.zip" />
     <Content Include="Admin\tools\install-workspaces.zip" />
+    <Content Include="Admin\tools\install-services.zip" />
     <Content Include="App_Browsers\ie.browser" />
     <Content Include="App_Browsers\FormRewriterAllBrowsers.browser" />
     <Content Include="Admin\tools\install-webpages.zip" />
-    <Content Include="Admin\tools\install-services.zip" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
