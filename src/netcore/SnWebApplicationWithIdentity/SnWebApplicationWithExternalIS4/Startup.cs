@@ -17,6 +17,7 @@ using SenseNet.ContentRepository;
 using SenseNet.ContentRepository.Security;
 using SenseNet.ContentRepository.Storage.Data.MsSqlClient;
 using SenseNet.Diagnostics;
+using SenseNet.IdentityServer4.WebClient;
 //using SenseNet.Identity.Experimental;
 using SenseNet.OData;
 using SenseNet.Search.Lucene29;
@@ -76,6 +77,16 @@ namespace SnWebApplicationWithExternalIS4
                     options.SaveTokens = true;
 
                     options.Scope.Add("sensenet");
+                })
+                .AddSenseNetIdentityServerClient(options =>
+                {
+                    options.Authority = "https://localhost:44311";
+                    options.BaseUrl = "https://localhost:44312";
+                    options.Clients.Add(new SnIdentityServerClient
+                    {
+                        ClientId = "localhost:44312",
+                        ClientType = "mvc"
+                    });
                 });
 
             // using Kestrel:
