@@ -62,7 +62,6 @@ namespace SnWebApplicationWithExternalIS4
                 })
                 .AddOpenIdConnect("oidc", options =>
                 {
-                    //options.Authority = "http://localhost:5000";
                     options.Authority = "https://localhost:44311";
                     options.RequireHttpsMetadata = false;
 
@@ -78,16 +77,7 @@ namespace SnWebApplicationWithExternalIS4
 
                     options.Scope.Add("sensenet");
                 })
-                .AddSenseNetIdentityServerClient(options =>
-                {
-                    options.Authority = "https://localhost:44311";
-                    options.BaseUrl = "https://localhost:44312";
-                    options.Clients.Add(new SnIdentityServerClient
-                    {
-                        ClientId = "localhost:44312",
-                        ClientType = "mvc"
-                    });
-                });
+                .AddDefaultSenseNetIdentityServerClients("https://localhost:44311");
 
             // using Kestrel:
             services.Configure<KestrelServerOptions>(options =>
