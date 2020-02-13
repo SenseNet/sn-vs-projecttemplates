@@ -32,6 +32,19 @@ namespace SnWebApplicationAPIWithExternalIS4
                     options.Audience = "sensenet";
                 })
                 .AddDefaultSenseNetIdentityServerClients("https://localhost:44311");
+
+            // add allowed client SPA urls
+            services.AddCors(options =>
+            {
+                options.AddPolicy("default",
+                    builder =>
+                    {
+                        builder.WithOrigins("https://localhost:44341")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod()
+                            .AllowCredentials();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +65,7 @@ namespace SnWebApplicationAPIWithExternalIS4
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseCors("default");
 
             // [sensenet]: Authentication
             app.UseSenseNetAuthentication(); 
