@@ -24,6 +24,7 @@ var config = {
     response_type: "code",
     scope: "openid profile sensenet",
     post_logout_redirect_uri: "https://localhost:44341/index.html",
+    extraQueryParams: { snrepo: "https://localhost:44362" }
 };
 
 var mgr = new Oidc.UserManager(config);
