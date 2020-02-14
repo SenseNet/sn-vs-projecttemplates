@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using SenseNet.IdentityServer4.WebClient;
 using SenseNet.OData;
 using SenseNet.Services.Core;
+using SenseNet.Services.Core.Cors;
 
 namespace SnWebApplicationAPIWithExternalIS4
 {
@@ -34,17 +35,7 @@ namespace SnWebApplicationAPIWithExternalIS4
                 .AddDefaultSenseNetIdentityServerClients("https://localhost:44311");
 
             // add allowed client SPA urls
-            services.AddCors(options =>
-            {
-                options.AddPolicy("default",
-                    builder =>
-                    {
-                        builder.WithOrigins("https://localhost:44341")
-                            .AllowAnyHeader()
-                            .AllowAnyMethod()
-                            .AllowCredentials();
-                    });
-            });
+            services.AddSenseNetCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,7 +56,7 @@ namespace SnWebApplicationAPIWithExternalIS4
             app.UseStaticFiles();
 
             app.UseRouting();
-            app.UseCors("default");
+            app.UseSenseNetCors();
 
             // [sensenet]: Authentication
             app.UseSenseNetAuthentication(); 

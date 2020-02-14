@@ -9,7 +9,7 @@
     <PackageReference Include="SenseNet.ContentRepository.InMemory" Version="0.0.3" />
     <PackageReference Include="SenseNet.IdentityServer4.WebClient" Version="0.0.0.2" />
     <PackageReference Include="SenseNet.OData" Version="0.0.3" />
-    <PackageReference Include="SenseNet.Services.Core" Version="0.0.5.1" />
+    <PackageReference Include="SenseNet.Services.Core" Version="0.0.5.2" />
     <PackageReference Include="SenseNet.Tools" Version="3.2.1" />
     <PackageReference Include="System.Runtime.Caching" Version="4.7.0" />
   </ItemGroup>
