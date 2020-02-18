@@ -11,7 +11,7 @@
     <PackageReference Include="SenseNet.OData" Version="0.0.3" />
     <PackageReference Include="SenseNet.Search.Lucene29.Local" Version="7.4.0" />
     <PackageReference Include="SenseNet.Security.EFCSecurityStore" Version="3.0.0" />
-    <PackageReference Include="SenseNet.Services.Core" Version="0.0.5" />
+    <PackageReference Include="SenseNet.Services.Core" Version="0.0.5.3" />
     <PackageReference Include="SenseNet.Tools" Version="3.2.1" />
   </ItemGroup>
 

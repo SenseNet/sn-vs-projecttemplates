@@ -65,9 +65,9 @@ namespace SnWebApplicationWithExternalIS4
                     options.Authority = "https://localhost:44311";
                     options.RequireHttpsMetadata = false;
 
-                    //options.ClientId = "mvc";
+                    options.ClientId = "mvc";
                     //options.ClientId = "localhost:5002";
-                    options.ClientId = "localhost:44312";
+                    //options.ClientId = "localhost:44312";
 
                     options.ClientSecret = "secret";
                     //options.ResponseType = "code";
