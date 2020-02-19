@@ -17,6 +17,7 @@ using SenseNet.ContentRepository;
 using SenseNet.ContentRepository.Security;
 using SenseNet.ContentRepository.Storage.Data.MsSqlClient;
 using SenseNet.Diagnostics;
+using SenseNet.IdentityServer4.WebClient;
 //using SenseNet.Identity.Experimental;
 using SenseNet.OData;
 using SenseNet.Search.Lucene29;
@@ -61,12 +62,13 @@ namespace SnWebApplicationWithExternalIS4
                 })
                 .AddOpenIdConnect("oidc", options =>
                 {
-                    options.Authority = "http://localhost:5000";
+                    options.Authority = "https://localhost:44311";
                     options.RequireHttpsMetadata = false;
 
-                    //options.ClientId = "mvc";
-                    //options.ClientId = "localhost44317";
-                    options.ClientId = "localhost5002";
+                    options.ClientId = "mvc";
+                    //options.ClientId = "localhost:5002";
+                    //options.ClientId = "localhost:44312";
+
                     options.ClientSecret = "secret";
                     //options.ResponseType = "code";
                     options.ResponseType = "code id_token";
@@ -74,7 +76,8 @@ namespace SnWebApplicationWithExternalIS4
                     options.SaveTokens = true;
 
                     options.Scope.Add("sensenet");
-                });
+                })
+                .AddDefaultSenseNetIdentityServerClients("https://localhost:44311");
 
             // using Kestrel:
             services.Configure<KestrelServerOptions>(options =>
@@ -102,7 +105,7 @@ namespace SnWebApplicationWithExternalIS4
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
