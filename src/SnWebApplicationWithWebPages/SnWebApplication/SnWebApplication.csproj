@@ -110,8 +110,8 @@
     <Reference Include="SenseNet.Common, Version=7.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Common.7.4.0\lib\netstandard2.0\SenseNet.Common.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.ContentRepository, Version=7.7.7.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.ContentRepository.7.7.7\lib\netstandard2.0\SenseNet.ContentRepository.dll</HintPath>
+    <Reference Include="SenseNet.ContentRepository, Version=7.7.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.ContentRepository.7.7.8\lib\netstandard2.0\SenseNet.ContentRepository.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.Preview, Version=7.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Preview.7.1.0\lib\netstandard2.0\SenseNet.Preview.dll</HintPath>
@@ -137,8 +137,8 @@
     <Reference Include="SenseNet.Services, Version=7.7.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.Services.7.7.7\lib\net461\SenseNet.Services.dll</HintPath>
     </Reference>
-    <Reference Include="SenseNet.Storage, Version=7.7.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SenseNet.ContentRepository.7.7.7\lib\netstandard2.0\SenseNet.Storage.dll</HintPath>
+    <Reference Include="SenseNet.Storage, Version=7.7.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SenseNet.Storage.7.7.6\lib\netstandard2.0\SenseNet.Storage.dll</HintPath>
     </Reference>
     <Reference Include="SenseNet.TaskManagement.Core, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SenseNet.TaskManagement.Core.2.0.1\lib\netstandard2.0\SenseNet.TaskManagement.Core.dll</HintPath>
@@ -186,6 +186,7 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
