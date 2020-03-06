@@ -37,9 +37,6 @@ namespace SnWebApplication.Api.Sql.TokenAuth
             JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
             // [sensenet]: Authentication
-            // Configure token authentication and add cookies so that non-script requests
-            // (e.g. downloading files and images) work too.
-
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -50,9 +47,7 @@ namespace SnWebApplication.Api.Sql.TokenAuth
                     options.Audience = "sensenet";
                 })
                 .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"]);
-
-            //UNDONE: cookie auth is missing
-
+            
             // [sensenet]: add allowed client SPA urls
             services.AddSenseNetCors();
         }
@@ -72,17 +67,12 @@ namespace SnWebApplication.Api.Sql.TokenAuth
             // [sensenet]: custom CORS policy
             app.UseSenseNetCors();
             // [sensenet]: use Authentication and set User.Current
-            app.UseSenseNetAuthentication();
+            app.UseSenseNetAuthentication(options =>
+            {
+                options.AddJwtCookie = true;
+            });
 
             app.UseAuthorization();
-
-            app.Use(async (context, next) =>
-            {
-                var user = User.Current.Name;
-
-                if (next != null)
-                    await next();
-            });
 
             // [sensenet] Add the sensenet binary handler
             app.UseSenseNetFiles();
