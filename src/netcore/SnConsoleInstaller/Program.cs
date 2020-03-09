@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.Extensions.Configuration;
 using SenseNet.Configuration;
 using SenseNet.ContentRepository;
@@ -29,9 +30,14 @@ namespace SnConsoleInstaller
                     new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
                 .UseLucene29LocalSearchEngine($"{Environment.CurrentDirectory}\\App_Data\\LocalIndex") as RepositoryBuilder;
 
-            new SenseNet.Packaging.Installer(builder)
+            var installer = new SenseNet.Packaging.Installer(builder)
                 .InstallSenseNet();
-                //.Import("c:\\temp\\import\\Root");
+
+            // optional configured import folders
+            foreach (var importPath in config.GetSection("sensenet:install:import").GetChildren().Select(c => c.Value))
+            {
+                installer.Import(importPath);
+            }
         }
     }
 }
