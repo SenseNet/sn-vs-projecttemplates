@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnConsoleInstaller", "SnCon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnWebApplication.Api.Sql.TokenAuth", "SnWebApplication.Api.Sql.TokenAuth\SnWebApplication.Api.Sql.TokenAuth.csproj", "{A2D3F352-422D-4EDB-B71C-AD7577BB0E8A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnWebApplication.Mvc.Sql.Oidc", "SnWebApplication.Mvc.Sql.Oidc\SnWebApplication.Mvc.Sql.Oidc.csproj", "{3931FD86-C8AA-4FB0-AFE9-9005E271B92D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A2D3F352-422D-4EDB-B71C-AD7577BB0E8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2D3F352-422D-4EDB-B71C-AD7577BB0E8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2D3F352-422D-4EDB-B71C-AD7577BB0E8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3931FD86-C8AA-4FB0-AFE9-9005E271B92D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3931FD86-C8AA-4FB0-AFE9-9005E271B92D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3931FD86-C8AA-4FB0-AFE9-9005E271B92D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3931FD86-C8AA-4FB0-AFE9-9005E271B92D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
