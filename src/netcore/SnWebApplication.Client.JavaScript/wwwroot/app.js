@@ -44,7 +44,7 @@ function login() {
 
 function api() {
     mgr.getUser().then(function (user) {
-        var url = "https://localhost:44362/odata.svc/Root?metadata=no&$select=Id,Name,Path&enableautofilters=false";
+        var url = "https://localhost:44362/odata.svc/Root?metadata=no&$select=Id,Name,Path&enableautofilters=false&query=TypeIs:File";
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         xhr.open("GET", url);

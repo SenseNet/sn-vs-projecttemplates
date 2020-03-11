@@ -1,7 +1,8 @@
 using System.IdentityModel.Tokens.Jwt;
+using System.ServiceModel;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -14,11 +15,12 @@ using SenseNet.IdentityServer4.WebClient;
 using SenseNet.OData;
 using SenseNet.Search.Lucene29;
 using SenseNet.Security.EFCSecurityStore;
+using SenseNet.Security.Messaging.RabbitMQ;
 using SenseNet.Services.Core;
 using SenseNet.Services.Core.Cors;
 using SenseNet.Services.Core.Virtualization;
 
-namespace SnWebApplication.Mvc.Sql.Oidc
+namespace SnWebApplication.Api.Sql.SearchService.TokenAuth
 {
     public class Startup
     {
@@ -32,37 +34,19 @@ namespace SnWebApplication.Mvc.Sql.Oidc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddRazorPages();
 
             JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
-            // The following authentication setup does not allow SPA clients
-            // connect to this app using token authentication. Use AddJwtBearer
-            // for that.
-
             // [sensenet]: Authentication
-            services.AddAuthentication(options =>
-                {
-                    options.DefaultScheme = "Cookies";
-                    options.DefaultChallengeScheme = "oidc";
-                })
-                .AddCookie("Cookies", options =>
-                {
-                    options.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
-                })
-                .AddOpenIdConnect("oidc", options =>
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
                 {
                     options.Authority = Configuration["sensenet:authentication:authority"];
                     options.RequireHttpsMetadata = false;
+                    options.SaveToken = true;
 
-                    options.ClientId = "mvc";
-
-                    options.ClientSecret = "secret";
-                    options.ResponseType = "code id_token";
-
-                    options.SaveTokens = true;
-
-                    options.Scope.Add("sensenet");
+                    options.Audience = "sensenet";
                 })
                 .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"]);
 
@@ -77,22 +61,19 @@ namespace SnWebApplication.Mvc.Sql.Oidc
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
 
             app.UseRouting();
 
             // [sensenet]: custom CORS policy
             app.UseSenseNetCors();
             // [sensenet]: use Authentication and set User.Current
-            app.UseSenseNetAuthentication();
-            
+            app.UseSenseNetAuthentication(options =>
+            {
+                options.AddJwtCookie = true;
+            });
+
             app.UseAuthorization();
 
             // [sensenet] Add the sensenet binary handler
@@ -103,10 +84,7 @@ namespace SnWebApplication.Mvc.Sql.Oidc
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                        name: "default",
-                        pattern: "{controller=Home}/{action=Index}/{id?}")
-                    .RequireAuthorization();
+                endpoints.MapRazorPages();
             });
         }
 
@@ -121,7 +99,10 @@ namespace SnWebApplication.Mvc.Sql.Oidc
                 .UseAccessProvider(new UserAccessProvider())
                 .UseDataProvider(new MsSqlDataProvider())
                 .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
-                .UseLucene29LocalSearchEngine($"{currentDirectory}\\App_Data\\LocalIndex")
+                .UseSecurityMessageProvider(new RabbitMQMessageProvider())
+                .UseLucene29CentralizedSearchEngine(
+                    new NetTcpBinding(), 
+                    new EndpointAddress(configuration["sensenet:search:service:address"]))
                 .StartWorkflowEngine(false)
                 .DisableNodeObservers()
                 .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
