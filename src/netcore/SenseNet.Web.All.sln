@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnWebApplication.Client.Jav
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnWebApplication.Api.Sql.SearchService.TokenAuth", "SnWebApplication.Api.Sql.SearchService.TokenAuth\SnWebApplication.Api.Sql.SearchService.TokenAuth.csproj", "{F0794F71-822B-441C-8DF4-DF50463AB13F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnWebApplication.Mvc.Sql.SearchService.TokenAuth", "SnWebApplication.Mvc.Sql.SearchService.TokenAuth\SnWebApplication.Mvc.Sql.SearchService.TokenAuth.csproj", "{CCCDE991-5510-40C7-A5A4-11E08FC20296}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnWebApplication.Mvc.Sql.SearchService.TokenAuth", "SnWebApplication.Mvc.Sql.SearchService.TokenAuth\SnWebApplication.Mvc.Sql.SearchService.TokenAuth.csproj", "{CCCDE991-5510-40C7-A5A4-11E08FC20296}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnWebApplication.Mvc.Sql.SearchService.LocalUserStore", "SnWebApplication.Mvc.Sql.SearchService.LocalUserStore\SnWebApplication.Mvc.Sql.SearchService.LocalUserStore.csproj", "{964E95C3-7F7D-4D66-AE91-79FCCB81BB49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnWebApplication.Mvc.Sql.SearchService.LocalUserStore", "SnWebApplication.Mvc.Sql.SearchService.LocalUserStore\SnWebApplication.Mvc.Sql.SearchService.LocalUserStore.csproj", "{964E95C3-7F7D-4D66-AE91-79FCCB81BB49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnConsoleClient", "SnConsoleClient\SnConsoleClient.csproj", "{89BC7B07-BD4A-4E4A-BA39-AA1FC8292A90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{964E95C3-7F7D-4D66-AE91-79FCCB81BB49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{964E95C3-7F7D-4D66-AE91-79FCCB81BB49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{964E95C3-7F7D-4D66-AE91-79FCCB81BB49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89BC7B07-BD4A-4E4A-BA39-AA1FC8292A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89BC7B07-BD4A-4E4A-BA39-AA1FC8292A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89BC7B07-BD4A-4E4A-BA39-AA1FC8292A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89BC7B07-BD4A-4E4A-BA39-AA1FC8292A90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
