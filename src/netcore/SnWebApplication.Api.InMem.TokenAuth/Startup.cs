@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using SenseNet.IdentityServer4.WebClient;
 using SenseNet.OData;
 using SenseNet.Services.Core;
+using SenseNet.Services.Core.Authentication;
 using SenseNet.Services.Core.Cors;
 using SenseNet.Services.Core.Virtualization;
 
@@ -39,8 +40,8 @@ namespace SnWebApplication.Api.InMem.TokenAuth
 
                     options.Audience = "sensenet";
                 })
-                .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"]);
-
+                .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"])
+                .AddSenseNetRegistration();
 
             // [sensenet]: add allowed client SPA urls
             services.AddSenseNetCors();
