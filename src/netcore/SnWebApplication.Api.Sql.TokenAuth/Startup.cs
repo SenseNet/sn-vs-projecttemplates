@@ -18,6 +18,7 @@ using SenseNet.Services.Core;
 using SenseNet.Services.Core.Authentication;
 using SenseNet.Services.Core.Cors;
 using SenseNet.Services.Core.Virtualization;
+using SenseNet.Services.Wopi;
 
 namespace SnWebApplication.Api.Sql.TokenAuth
 {
@@ -81,6 +82,8 @@ namespace SnWebApplication.Api.Sql.TokenAuth
 
             // [sensenet]: OData middleware
             app.UseSenseNetOdata();
+            // [sensenet]: WOPI middleware
+            app.UseSenseNetWopi();
 
             app.UseEndpoints(endpoints =>
             {
