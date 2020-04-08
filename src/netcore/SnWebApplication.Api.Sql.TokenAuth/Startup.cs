@@ -15,8 +15,10 @@ using SenseNet.OData;
 using SenseNet.Search.Lucene29;
 using SenseNet.Security.EFCSecurityStore;
 using SenseNet.Services.Core;
+using SenseNet.Services.Core.Authentication;
 using SenseNet.Services.Core.Cors;
 using SenseNet.Services.Core.Virtualization;
+using SenseNet.Services.Wopi;
 
 namespace SnWebApplication.Api.Sql.TokenAuth
 {
@@ -46,8 +48,9 @@ namespace SnWebApplication.Api.Sql.TokenAuth
 
                     options.Audience = "sensenet";
                 })
-                .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"]);
-            
+                .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"])
+                .AddSenseNetRegistration();
+
             // [sensenet]: add allowed client SPA urls
             services.AddSenseNetCors();
         }
@@ -79,6 +82,8 @@ namespace SnWebApplication.Api.Sql.TokenAuth
 
             // [sensenet]: OData middleware
             app.UseSenseNetOdata();
+            // [sensenet]: WOPI middleware
+            app.UseSenseNetWopi();
 
             app.UseEndpoints(endpoints =>
             {

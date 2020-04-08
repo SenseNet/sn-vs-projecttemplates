@@ -18,6 +18,7 @@ using SenseNet.Security.Messaging.RabbitMQ;
 using SenseNet.Services.Core.Cors;
 using SenseNet.Services.Core.Virtualization;
 using SenseNet.Services.Core;
+using SenseNet.Services.Wopi;
 
 namespace SnWebApplication.Mvc.Sql.SearchService.LocalUserStore
 {
@@ -72,6 +73,8 @@ namespace SnWebApplication.Mvc.Sql.SearchService.LocalUserStore
 
             // [sensenet]: OData middleware
             app.UseSenseNetOdata();
+            // [sensenet]: WOPI middleware
+            app.UseSenseNetWopi();
 
             app.UseEndpoints(endpoints =>
             {
