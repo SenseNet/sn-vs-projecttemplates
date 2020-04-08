@@ -38,6 +38,13 @@ namespace SnConsoleInstaller
             {
                 installer.Import(importPath);
             }
+
+            // optional configured install folders
+            foreach (var installPath in config.GetSection("sensenet:install:packages").GetChildren().Select(c => c.Value))
+            {
+                installer.InstallPackage(installPath);
+            }
+
         }
     }
 }
