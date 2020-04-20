@@ -104,7 +104,6 @@ namespace SnWebApplication.Api.Sql.TokenAuth
                 .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
                 .UseLucene29LocalSearchEngine($"{currentDirectory}\\App_Data\\LocalIndex")
                 .StartWorkflowEngine(false)
-                .DisableNodeObservers()
                 .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
 
             Providers.Instance.PropertyCollector = new EventPropertyCollector();

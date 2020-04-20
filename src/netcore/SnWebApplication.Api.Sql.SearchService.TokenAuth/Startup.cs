@@ -109,7 +109,6 @@ namespace SnWebApplication.Api.Sql.SearchService.TokenAuth
                     new NetTcpBinding(), 
                     new EndpointAddress(configuration["sensenet:search:service:address"]))
                 .StartWorkflowEngine(false)
-                .DisableNodeObservers()
                 .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
 
             Providers.Instance.PropertyCollector = new EventPropertyCollector();

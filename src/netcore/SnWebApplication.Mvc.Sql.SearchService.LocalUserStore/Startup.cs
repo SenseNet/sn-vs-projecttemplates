@@ -101,7 +101,6 @@ namespace SnWebApplication.Mvc.Sql.SearchService.LocalUserStore
                     new NetTcpBinding(),
                     new EndpointAddress(configuration["sensenet:search:service:address"]))
                 .StartWorkflowEngine(false)
-                .DisableNodeObservers()
                 .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
 
             Providers.Instance.PropertyCollector = new EventPropertyCollector();
