@@ -24,6 +24,7 @@ namespace SnConsoleInstaller
                 .SetConsole(Console.Out)
                 .UseLogger(new SnFileSystemEventLogger())
                 .UseTracer(new SnFileSystemTracer())
+                .UseTraceCategories("System", "Event", "Repository")
                 .UseConfiguration(config)
                 .UseDataProvider(new MsSqlDataProvider())
                 .UseSecurityDataProvider(
