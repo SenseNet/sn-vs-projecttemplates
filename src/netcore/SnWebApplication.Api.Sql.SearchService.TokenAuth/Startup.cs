@@ -51,7 +51,11 @@ namespace SnWebApplication.Api.Sql.SearchService.TokenAuth
                     options.Audience = "sensenet";
                 })
                 .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"])
-                .AddSenseNetRegistration();
+                .AddSenseNetRegistration(options =>
+                {
+                    // add newly registered users to this group
+                    options.Groups.Add("/Root/IMS/Public/Administrators");
+                });
 
             // [sensenet]: add allowed client SPA urls
             services.AddSenseNetCors();
