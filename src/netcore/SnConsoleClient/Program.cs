@@ -2,7 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using SenseNet.Client;
 using System;
+using System.IO;
+using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace SnConsoleClient
@@ -27,6 +30,19 @@ namespace SnConsoleClient
 
             // use client Content or RESTCaller apis to manage the repository
             // var content = await Content.LoadAsync(path);
+            //var response = await RESTCaller.GetResponseJsonAsync(new ODataRequest
+            //{
+            //    ContentId = 1202,
+            //    ActionName = "GetPreviewImages",
+            //    Select = new[]{"Id", "Name", "Path", "Binary"},
+            //    Metadata = MetadataFormat.None
+            //});
+
+            await RESTCaller.GetStreamResponseAsync(1210, "V1.0.A", async response =>
+            {
+                await using var fs = File.OpenWrite("C:\\Users\\miklo\\Documents\\sample\\preview.png");
+                await response.Content.CopyToAsync(fs).ConfigureAwait(false);
+            }, CancellationToken.None).ConfigureAwait(false);
         }
 
         private static async Task<string> GetTokenAsync(IConfiguration config)

@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnWebApplication.Mvc.Sql.Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnConsoleClient", "SnConsoleClient\SnConsoleClient.csproj", "{89BC7B07-BD4A-4E4A-BA39-AA1FC8292A90}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnDemoWebApplication.Api.InMem.TokenAuth", "SnDemoWebApplication.Api.InMem.TokenAuth\SnDemoWebApplication.Api.InMem.TokenAuth.csproj", "{5466B796-7EE9-44BC-87E7-8769696A5B9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnDemoConsoleInstaller", "SnDemoConsoleInstaller\SnDemoConsoleInstaller.csproj", "{114552BB-D936-4408-83D9-2C58FA0B7470}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnDemoWebApplication.Api.Sql.TokenAuth", "SnDemoWebApplication.Api.Sql.TokenAuth\SnDemoWebApplication.Api.Sql.TokenAuth.csproj", "{235A3853-8F4C-42AF-8B6C-785A7FC877C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,10 +67,14 @@ Global
 		{89BC7B07-BD4A-4E4A-BA39-AA1FC8292A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89BC7B07-BD4A-4E4A-BA39-AA1FC8292A90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89BC7B07-BD4A-4E4A-BA39-AA1FC8292A90}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5466B796-7EE9-44BC-87E7-8769696A5B9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5466B796-7EE9-44BC-87E7-8769696A5B9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5466B796-7EE9-44BC-87E7-8769696A5B9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5466B796-7EE9-44BC-87E7-8769696A5B9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{114552BB-D936-4408-83D9-2C58FA0B7470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{114552BB-D936-4408-83D9-2C58FA0B7470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{114552BB-D936-4408-83D9-2C58FA0B7470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{114552BB-D936-4408-83D9-2C58FA0B7470}.Release|Any CPU.Build.0 = Release|Any CPU
+		{235A3853-8F4C-42AF-8B6C-785A7FC877C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{235A3853-8F4C-42AF-8B6C-785A7FC877C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{235A3853-8F4C-42AF-8B6C-785A7FC877C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{235A3853-8F4C-42AF-8B6C-785A7FC877C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

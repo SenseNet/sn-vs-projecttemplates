@@ -1,13 +1,20 @@
 using System;
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http.Features;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SenseNet.Configuration;
 using SenseNet.ContentRepository;
+using SenseNet.ContentRepository.Security;
+using SenseNet.ContentRepository.Storage.Data.MsSqlClient;
+using SenseNet.Diagnostics;
 using SenseNet.OData;
+using SenseNet.Preview.Aspose;
+using SenseNet.Search.Lucene29;
+using SenseNet.Security.EFCSecurityStore;
 using SenseNet.Services.Core;
 using SenseNet.Services.Core.Authentication;
 using SenseNet.Services.Core.Authentication.IdentityServer4;
@@ -15,7 +22,7 @@ using SenseNet.Services.Core.Cors;
 using SenseNet.Services.Core.Virtualization;
 using SenseNet.Services.Wopi;
 
-namespace SnDemoWebApplication.Api.InMem.TokenAuth
+namespace SnDemoWebApplication.Api.Sql.TokenAuth
 {
     public class Startup
     {
@@ -31,18 +38,9 @@ namespace SnDemoWebApplication.Api.InMem.TokenAuth
         {
             services.AddRazorPages();
 
-            services.Configure<FormOptions>(options =>
-            {
-                options.MemoryBufferThreshold = int.MaxValue;
-                options.ValueLengthLimit = int.MaxValue;
-                options.MultipartBoundaryLengthLimit = int.MaxValue;
-                options.MultipartBodyLengthLimit = long.MaxValue;
-            });
+            JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
             // [sensenet]: Authentication
-            // Configure token authentication and add cookies so that non-script requests
-            // (e.g. downloading files and images) work too.
-
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -70,7 +68,7 @@ namespace SnDemoWebApplication.Api.InMem.TokenAuth
             {
                 app.UseDeveloperExceptionPage();
             }
-            
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -80,16 +78,10 @@ namespace SnDemoWebApplication.Api.InMem.TokenAuth
             // [sensenet]: use Authentication and set User.Current
             app.UseSenseNetAuthentication(options =>
             {
-                options.AddJwtCookie = true; 
+                options.AddJwtCookie = true;
             });
 
-            app.Use(async (context, next) =>
-            {
-                User.Current = User.Administrator;
-
-                if (next != null)
-                    await next();
-            });
+            app.UseAuthorization();
 
             // [sensenet] Add the sensenet binary handler
             app.UseSenseNetFiles();
@@ -99,15 +91,31 @@ namespace SnDemoWebApplication.Api.InMem.TokenAuth
             // [sensenet]: WOPI middleware
             app.UseSenseNetWopi();
 
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers();
-            //});
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
             });
+        }
+
+        internal static RepositoryBuilder GetRepositoryBuilder(IConfiguration configuration, IHostEnvironment environment)
+        {
+            // assemble a SQL-specific repository
+
+            var repositoryBuilder = new RepositoryBuilder()
+                .UseConfiguration(configuration)
+                .UseLogger(new SnFileSystemEventLogger())
+                .UseTracer(new SnFileSystemTracer())
+                .UseAccessProvider(new UserAccessProvider())
+                .UseDataProvider(new MsSqlDataProvider())
+                .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
+                .UseLucene29LocalSearchEngine($"{Environment.CurrentDirectory}\\App_Data\\LocalIndex")
+                .UseAsposeDocumentPreviewProvider(config => { config.SkipLicenseCheck = environment.IsDevelopment(); })
+                .StartWorkflowEngine(false)
+                .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
+
+            Providers.Instance.PropertyCollector = new EventPropertyCollector();
+
+            return repositoryBuilder;
         }
     }
 }
