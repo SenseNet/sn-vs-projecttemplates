@@ -2,10 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using SenseNet.Client;
 using System;
-using System.IO;
-using System.Net;
 using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace SnConsoleClient
