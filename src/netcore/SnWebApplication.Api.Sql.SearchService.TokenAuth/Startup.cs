@@ -1,5 +1,4 @@
 using System.IdentityModel.Tokens.Jwt;
-using System.ServiceModel;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +12,7 @@ using SenseNet.ContentRepository.Storage.Data.MsSqlClient;
 using SenseNet.Diagnostics;
 using SenseNet.OData;
 using SenseNet.Search.Lucene29;
+using SenseNet.Search.Lucene29.Centralized.GrpcClient;
 using SenseNet.Security.EFCSecurityStore;
 using SenseNet.Security.Messaging.RabbitMQ;
 using SenseNet.Services.Core;
@@ -109,9 +109,8 @@ namespace SnWebApplication.Api.Sql.SearchService.TokenAuth
                 .UseDataProvider(new MsSqlDataProvider())
                 .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
                 .UseSecurityMessageProvider(new RabbitMQMessageProvider())
-                .UseLucene29CentralizedSearchEngine(
-                    new NetTcpBinding(), 
-                    new EndpointAddress(configuration["sensenet:search:service:address"]))
+                .UseLucene29CentralizedSearchEngine()
+                .UseLucene29CentralizedGrpcServiceClient(configuration["sensenet:search:service:address"])
                 .StartWorkflowEngine(false)
                 .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
 
