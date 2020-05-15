@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using Microsoft.Extensions.Configuration;
 using SenseNet.Configuration;
@@ -31,7 +32,8 @@ namespace SnDemoConsoleInstaller
                 .UseDataProvider(new MsSqlDataProvider())
                 .UseSecurityDataProvider(
                     new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
-                .UseLucene29LocalSearchEngine($"{Environment.CurrentDirectory}\\App_Data\\LocalIndex") as RepositoryBuilder;
+                .UseLucene29LocalSearchEngine(Path.Combine(Environment.CurrentDirectory, "App_Data", "LocalIndex")) 
+                as RepositoryBuilder;
 
             var installer = new SenseNet.Packaging.Installer(builder)
                 .InstallSenseNet()
