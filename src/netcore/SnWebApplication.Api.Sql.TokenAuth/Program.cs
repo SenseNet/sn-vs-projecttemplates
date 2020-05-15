@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -13,8 +12,9 @@ namespace SnWebApplication.Api.Sql.TokenAuth
             var builder = CreateHostBuilder(args);
             var host = builder.Build();
             var config = host.Services.GetService(typeof(IConfiguration)) as IConfiguration;
+            var environment = host.Services.GetService(typeof(IHostEnvironment)) as IHostEnvironment;
 
-            var repositoryBuilder = Startup.GetRepositoryBuilder(config, Environment.CurrentDirectory);
+            var repositoryBuilder = Startup.GetRepositoryBuilder(config, environment);
 
             using (Repository.Start(repositoryBuilder))
             {
