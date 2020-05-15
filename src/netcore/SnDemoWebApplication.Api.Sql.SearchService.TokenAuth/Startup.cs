@@ -1,3 +1,5 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -5,7 +7,17 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SenseNet.Configuration;
+using SenseNet.ContentRepository;
+using SenseNet.ContentRepository.Security;
+using SenseNet.ContentRepository.Storage.Data.MsSqlClient;
+using SenseNet.Diagnostics;
 using SenseNet.OData;
+using SenseNet.Preview.Aspose;
+using SenseNet.Search.Lucene29;
+using SenseNet.Search.Lucene29.Centralized.GrpcClient;
+using SenseNet.Security.EFCSecurityStore;
+using SenseNet.Security.Messaging.RabbitMQ;
 using SenseNet.Services.Core;
 using SenseNet.Services.Core.Authentication;
 using SenseNet.Services.Core.Authentication.IdentityServer4;
@@ -13,7 +25,7 @@ using SenseNet.Services.Core.Cors;
 using SenseNet.Services.Core.Virtualization;
 using SenseNet.Services.Wopi;
 
-namespace SnWebApplication.Api.InMem.TokenAuth
+namespace SnDemoWebApplication.Api.Sql.SearchService.TokenAuth
 {
     public class Startup
     {
@@ -29,10 +41,9 @@ namespace SnWebApplication.Api.InMem.TokenAuth
         {
             services.AddRazorPages();
 
-            // [sensenet]: Authentication
-            // Configure token authentication and add cookies so that non-script requests
-            // (e.g. downloading files and images) work too.
+            JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
 
+            // [sensenet]: Authentication
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
@@ -43,7 +54,11 @@ namespace SnWebApplication.Api.InMem.TokenAuth
                     options.Audience = "sensenet";
                 })
                 .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"])
-                .AddSenseNetRegistration();
+                .AddSenseNetRegistration(options =>
+                {
+                    // add newly registered users to this group
+                    options.Groups.Add("/Root/IMS/Public/Administrators");
+                });
 
             // [sensenet]: add allowed client SPA urls
             services.AddSenseNetCors();
@@ -56,7 +71,7 @@ namespace SnWebApplication.Api.InMem.TokenAuth
             {
                 app.UseDeveloperExceptionPage();
             }
-            
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -66,8 +81,10 @@ namespace SnWebApplication.Api.InMem.TokenAuth
             // [sensenet]: use Authentication and set User.Current
             app.UseSenseNetAuthentication(options =>
             {
-                options.AddJwtCookie = true; 
+                options.AddJwtCookie = true;
             });
+
+            app.UseAuthorization();
 
             // [sensenet] Add the sensenet binary handler
             app.UseSenseNetFiles();
@@ -76,7 +93,7 @@ namespace SnWebApplication.Api.InMem.TokenAuth
             app.UseSenseNetOdata();
             // [sensenet]: WOPI middleware
             app.UseSenseNetWopi();
-            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
@@ -87,6 +104,40 @@ namespace SnWebApplication.Api.InMem.TokenAuth
                                                       "more information on how to call the REST API.");
                 });
             });
+        }
+
+        internal static RepositoryBuilder GetRepositoryBuilder(IConfiguration configuration, IHostEnvironment environment)
+        {
+            // assemble a SQL-specific repository
+
+            var repositoryBuilder = new RepositoryBuilder()
+                .UseConfiguration(configuration)
+                .UseLogger(new SnFileSystemEventLogger())
+                .UseTracer(new SnFileSystemTracer())
+                .UseAccessProvider(new UserAccessProvider())
+                .UseDataProvider(new MsSqlDataProvider())
+                .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
+                .UseSecurityMessageProvider(new RabbitMQMessageProvider())
+                .UseLucene29CentralizedSearchEngine()
+                .UseLucene29CentralizedGrpcServiceClient(configuration["sensenet:search:service:address"], options =>
+                {
+                    if (!environment.IsDevelopment())
+                        return;
+
+                    // trust the server in a development environment
+                    options.HttpClient = new HttpClient(new HttpClientHandler
+                    {
+                        ServerCertificateCustomValidationCallback = (message, certificate2, arg3, arg4) => true
+                    });
+                    options.DisposeHttpClient = true;
+                })
+                .UseAsposeDocumentPreviewProvider(config => { config.SkipLicenseCheck = environment.IsDevelopment(); })
+                .StartWorkflowEngine(false)
+                .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
+
+            Providers.Instance.PropertyCollector = new EventPropertyCollector();
+
+            return repositoryBuilder;
         }
     }
 }
