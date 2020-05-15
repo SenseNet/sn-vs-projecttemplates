@@ -1,4 +1,4 @@
-using System.ServiceModel;
+using System.Net.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
@@ -13,6 +13,7 @@ using SenseNet.Diagnostics;
 using SenseNet.Identity.Experimental;
 using SenseNet.OData;
 using SenseNet.Search.Lucene29;
+using SenseNet.Search.Lucene29.Centralized.GrpcClient;
 using SenseNet.Security.EFCSecurityStore;
 using SenseNet.Security.Messaging.RabbitMQ;
 using SenseNet.Services.Core.Cors;
@@ -85,7 +86,7 @@ namespace SnWebApplication.Mvc.Sql.SearchService.LocalUserStore
             });
         }
 
-        internal static RepositoryBuilder GetRepositoryBuilder(IConfiguration configuration, string currentDirectory)
+        internal static RepositoryBuilder GetRepositoryBuilder(IConfiguration configuration, IHostEnvironment environment)
         {
             // assemble a SQL-specific repository
 
@@ -97,9 +98,19 @@ namespace SnWebApplication.Mvc.Sql.SearchService.LocalUserStore
                 .UseDataProvider(new MsSqlDataProvider())
                 .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
                 .UseSecurityMessageProvider(new RabbitMQMessageProvider())
-                .UseLucene29CentralizedSearchEngine(
-                    new NetTcpBinding(),
-                    new EndpointAddress(configuration["sensenet:search:service:address"]))
+                .UseLucene29CentralizedSearchEngine()
+                .UseLucene29CentralizedGrpcServiceClient(configuration["sensenet:search:service:address"], options =>
+                {
+                    if (!environment.IsDevelopment())
+                        return;
+
+                    // trust the server in a development environment
+                    options.HttpClient = new HttpClient(new HttpClientHandler
+                    {
+                        ServerCertificateCustomValidationCallback = (message, certificate2, arg3, arg4) => true
+                    });
+                    options.DisposeHttpClient = true;
+                })
                 .StartWorkflowEngine(false)
                 .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
 
