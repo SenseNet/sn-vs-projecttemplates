@@ -27,12 +27,20 @@ namespace SnConsoleClient
 
             // use client Content or RESTCaller apis to manage the repository
             // var content = await Content.LoadAsync(path);
+            foreach (var child in await Content.LoadCollectionAsync("/Root"))
+            {
+                Console.WriteLine(child.Path);
+            }
         }
 
         private static async Task<string> GetTokenAsync(IConfiguration config)
         {
+            var authority = config["sensenet:Authentication:Authority"];
+
+            Console.WriteLine($"Requesting auth token from {authority}");
+
             var client = new HttpClient();
-            var disco = await client.GetDiscoveryDocumentAsync(config["sensenet:Authentication:Authority"]);
+            var disco = await client.GetDiscoveryDocumentAsync(authority);
             if (disco.IsError)
             {
                 Console.WriteLine(disco.Error);
@@ -54,6 +62,8 @@ namespace SnConsoleClient
                 Console.WriteLine(tokenResponse.Error);
                 return string.Empty;
             }
+
+            Console.WriteLine("Token request was successful.");
 
             return tokenResponse.AccessToken;
         }
