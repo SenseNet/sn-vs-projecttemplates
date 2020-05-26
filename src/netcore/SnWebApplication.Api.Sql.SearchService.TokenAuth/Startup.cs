@@ -51,6 +51,11 @@ namespace SnWebApplication.Api.Sql.SearchService.TokenAuth
                     options.SaveToken = true;
 
                     options.Audience = "sensenet";
+
+                    string metadataHost = Configuration["sensenet:authentication:metadatahost"];
+                    if (!string.IsNullOrWhiteSpace(metadataHost)) {
+                        options.MetadataAddress = $"{metadataHost}/.well-known/openid-configuration";
+                    }
                 })
                 .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"])
                 .AddSenseNetRegistration(options =>
