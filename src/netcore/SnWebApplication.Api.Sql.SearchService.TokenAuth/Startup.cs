@@ -28,11 +28,13 @@ namespace SnWebApplication.Api.Sql.SearchService.TokenAuth
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment environment, IConfiguration configuration)
         {
-            Configuration = configuration;
+            Environment = environment;
+            Configuration = configuration;            
         }
 
+        public IWebHostEnvironment Environment { get; }
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -55,6 +57,14 @@ namespace SnWebApplication.Api.Sql.SearchService.TokenAuth
                     string metadataHost = Configuration["sensenet:authentication:metadatahost"];
                     if (!string.IsNullOrWhiteSpace(metadataHost)) {
                         options.MetadataAddress = $"{metadataHost}/.well-known/openid-configuration";
+                    }
+
+                    if (Environment.IsDevelopment())
+                    {
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = false,
+                        };
                     }
                 })
                 .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"])
