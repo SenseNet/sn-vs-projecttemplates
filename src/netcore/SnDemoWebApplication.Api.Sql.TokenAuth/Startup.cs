@@ -1,12 +1,13 @@
-using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using SenseNet.Configuration;
 using SenseNet.ContentRepository;
 using SenseNet.ContentRepository.Security;
@@ -27,11 +28,13 @@ namespace SnDemoWebApplication.Api.Sql.TokenAuth
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IWebHostEnvironment environment, IConfiguration configuration)
         {
+            Environment = environment;
             Configuration = configuration;
         }
 
+        public IWebHostEnvironment Environment { get; }
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -50,6 +53,18 @@ namespace SnDemoWebApplication.Api.Sql.TokenAuth
                     options.SaveToken = true;
 
                     options.Audience = "sensenet";
+
+                    var metadataHost = Configuration["sensenet:authentication:metadatahost"];
+                    if (!string.IsNullOrWhiteSpace(metadataHost))
+                        options.MetadataAddress = $"{metadataHost}/.well-known/openid-configuration";
+
+                    if (Environment.IsDevelopment())
+                    {
+                        options.TokenValidationParameters = new TokenValidationParameters
+                        {
+                            ValidateIssuer = false,
+                        };
+                    }
                 })
                 .AddDefaultSenseNetIdentityServerClients(Configuration["sensenet:authentication:authority"])
                 .AddSenseNetRegistration(options =>
@@ -95,6 +110,12 @@ namespace SnDemoWebApplication.Api.Sql.TokenAuth
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+
+                endpoints.MapGet("/", async context =>
+                {
+                    await context.Response.WriteAsync("sensenet is listening. Visit https://sensenet.com for " +
+                                                      "more information on how to call the REST API.");
+                });
             });
         }
 
@@ -109,7 +130,7 @@ namespace SnDemoWebApplication.Api.Sql.TokenAuth
                 .UseAccessProvider(new UserAccessProvider())
                 .UseDataProvider(new MsSqlDataProvider())
                 .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
-                .UseLucene29LocalSearchEngine(Path.Combine(Environment.CurrentDirectory, "App_Data", "LocalIndex"))
+                .UseLucene29LocalSearchEngine(Path.Combine(System.Environment.CurrentDirectory, "App_Data", "LocalIndex"))
                 .UseAsposeDocumentPreviewProvider(config => { config.SkipLicenseCheck = environment.IsDevelopment(); })
                 .StartWorkflowEngine(false)
                 .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
