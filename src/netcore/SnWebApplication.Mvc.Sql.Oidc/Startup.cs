@@ -1,4 +1,6 @@
+using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -115,7 +117,7 @@ namespace SnWebApplication.Mvc.Sql.Oidc
             });
         }
 
-        internal static RepositoryBuilder GetRepositoryBuilder(IConfiguration configuration, string currentDirectory)
+        internal static RepositoryBuilder GetRepositoryBuilder(IConfiguration configuration, IHostEnvironment environment)
         {
             // assemble a SQL-specific repository
 
@@ -126,7 +128,7 @@ namespace SnWebApplication.Mvc.Sql.Oidc
                 .UseAccessProvider(new UserAccessProvider())
                 .UseDataProvider(new MsSqlDataProvider())
                 .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
-                .UseLucene29LocalSearchEngine($"{currentDirectory}\\App_Data\\LocalIndex")
+                .UseLucene29LocalSearchEngine(Path.Combine(Environment.CurrentDirectory, "App_Data", "LocalIndex"))
                 .StartWorkflowEngine(false)
                 .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
 
