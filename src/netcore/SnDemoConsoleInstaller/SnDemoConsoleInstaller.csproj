@@ -11,7 +11,7 @@
     <PackageReference Include="SenseNet.ContentRepository" Version="7.7.11" />
     <PackageReference Include="SenseNet.OData" Version="0.0.7" />
     <PackageReference Include="SenseNet.Preview.Aspose.Install" Version="7.3.0" />
-    <PackageReference Include="SenseNet.Search.Lucene29.Local" Version="7.4.0" />
+    <PackageReference Include="SenseNet.Search.Lucene29.Local" Version="7.4.1" />
     <PackageReference Include="SenseNet.Security.EFCSecurityStore" Version="3.0.0" />
     <PackageReference Include="SenseNet.Services.Core.Install" Version="0.0.9" />
     <PackageReference Include="SenseNet.Preview.Install" Version="7.3.0" />
