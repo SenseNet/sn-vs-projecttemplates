@@ -8,12 +8,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.0.0" />
-    <PackageReference Include="SenseNet.ContentRepository" Version="7.7.12" />
+    <PackageReference Include="SenseNet.ContentRepository" Version="7.7.12.1" />
     <PackageReference Include="SenseNet.OData" Version="0.0.8" />
     <PackageReference Include="SenseNet.Preview.Aspose.Install" Version="7.3.0" />
     <PackageReference Include="SenseNet.Search.Lucene29.Local" Version="7.4.1" />
     <PackageReference Include="SenseNet.Security.EFCSecurityStore" Version="3.0.0" />
-    <PackageReference Include="SenseNet.Services.Core.Install" Version="0.0.10" />
+    <PackageReference Include="SenseNet.Services.Core.Install" Version="0.0.10.1" />
     <PackageReference Include="SenseNet.Preview.Install" Version="7.3.0" />
     <PackageReference Include="System.Runtime.Caching" Version="4.7.0" />
   </ItemGroup>
