@@ -10,16 +10,10 @@ using SenseNet.ContentRepository;
 using SenseNet.ContentRepository.Security;
 using SenseNet.ContentRepository.Storage.Data.MsSqlClient;
 using SenseNet.Diagnostics;
+using SenseNet.Extensions.DependencyInjection;
 using SenseNet.Identity.Experimental;
-using SenseNet.OData;
-using SenseNet.Search.Lucene29;
-using SenseNet.Search.Lucene29.Centralized.GrpcClient;
 using SenseNet.Security.EFCSecurityStore;
 using SenseNet.Security.Messaging.RabbitMQ;
-using SenseNet.Services.Core.Cors;
-using SenseNet.Services.Core.Virtualization;
-using SenseNet.Services.Core;
-using SenseNet.Services.Wopi;
 
 namespace SnWebApplication.Mvc.Sql.SearchService.LocalUserStore
 {

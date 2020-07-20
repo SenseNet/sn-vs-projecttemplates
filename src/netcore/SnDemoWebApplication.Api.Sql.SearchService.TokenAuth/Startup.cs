@@ -13,18 +13,11 @@ using SenseNet.ContentRepository;
 using SenseNet.ContentRepository.Security;
 using SenseNet.ContentRepository.Storage.Data.MsSqlClient;
 using SenseNet.Diagnostics;
-using SenseNet.OData;
-using SenseNet.Preview.Aspose;
-using SenseNet.Search.Lucene29;
-using SenseNet.Search.Lucene29.Centralized.GrpcClient;
+using SenseNet.Extensions.DependencyInjection;
 using SenseNet.Security.EFCSecurityStore;
 using SenseNet.Security.Messaging.RabbitMQ;
-using SenseNet.Services.Core;
 using SenseNet.Services.Core.Authentication;
 using SenseNet.Services.Core.Authentication.IdentityServer4;
-using SenseNet.Services.Core.Cors;
-using SenseNet.Services.Core.Virtualization;
-using SenseNet.Services.Wopi;
 
 namespace SnDemoWebApplication.Api.Sql.SearchService.TokenAuth
 {
