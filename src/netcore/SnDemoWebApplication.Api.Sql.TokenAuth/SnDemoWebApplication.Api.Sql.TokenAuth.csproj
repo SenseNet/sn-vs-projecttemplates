@@ -8,13 +8,13 @@
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="3.1.2" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.9.10" />
-    <PackageReference Include="SenseNet.ContentRepository" Version="7.7.12.4" />
-    <PackageReference Include="SenseNet.OData" Version="0.0.8.1" />
-    <PackageReference Include="SenseNet.Preview.Aspose" Version="7.3.0.1" />
-    <PackageReference Include="SenseNet.Search.Lucene29.Local" Version="7.4.1.1" />
+    <PackageReference Include="SenseNet.ContentRepository" Version="7.7.13" />
+    <PackageReference Include="SenseNet.OData" Version="0.0.9" />
+    <PackageReference Include="SenseNet.Preview.Aspose" Version="7.3.1" />
+    <PackageReference Include="SenseNet.Search.Lucene29.Local" Version="7.4.2" />
     <PackageReference Include="SenseNet.Security.EFCSecurityStore" Version="3.0.0" />
-    <PackageReference Include="SenseNet.Services.Core" Version="0.0.10.3" />
-    <PackageReference Include="SenseNet.Services.Wopi" Version="0.0.3.2" />
+    <PackageReference Include="SenseNet.Services.Core" Version="0.0.11" />
+    <PackageReference Include="SenseNet.Services.Wopi" Version="0.0.4" />
     <PackageReference Include="SenseNet.Tools" Version="3.2.4" />
   </ItemGroup>
 
