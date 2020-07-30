@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using SenseNet.ContentRepository.InMemory;
 using SenseNet.ContentRepository.Security;
+using SenseNet.Diagnostics;
 using SenseNet.Extensions.DependencyInjection;
 
 namespace SnWebApplication.Api.InMem.TokenAuth
@@ -15,7 +16,10 @@ namespace SnWebApplication.Api.InMem.TokenAuth
 
             using (InMemoryExtensions.StartInMemoryRepository(repositoryBuilder =>
             {
-                repositoryBuilder.UseAccessProvider(new UserAccessProvider());
+                repositoryBuilder.UseAccessProvider(new UserAccessProvider())
+                    .UseTracer(new SnFileSystemTracer())
+                    .UseTraceCategories("System", "ContentOperation", "Repository", "Event")
+                    .UseLogger(new SnFileSystemEventLogger());
             }))
             {
                 // put repository initialization here (e.g. import)

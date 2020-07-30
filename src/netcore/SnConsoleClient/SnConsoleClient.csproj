@@ -9,7 +9,7 @@
     <PackageReference Include="IdentityModel" Version="4.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.2" />
-    <PackageReference Include="SenseNet.Client" Version="2.0.6" />
+    <PackageReference Include="SenseNet.Client" Version="2.0.6.1" />
   </ItemGroup>
 
   <ItemGroup>
