@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
@@ -82,6 +83,13 @@ namespace SnDemoWebApplication.Api.Sql.TokenAuth
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // [sensenet]: general cookie settings
+            app.UseCookiePolicy(new CookiePolicyOptions
+            {
+                HttpOnly = HttpOnlyPolicy.Always,
+                Secure = CookieSecurePolicy.Always
+            });
 
             // [sensenet]: custom CORS policy
             app.UseSenseNetCors();
