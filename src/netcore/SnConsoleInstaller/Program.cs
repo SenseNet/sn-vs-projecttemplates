@@ -19,6 +19,7 @@ namespace SnConsoleInstaller
             IConfiguration config = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json", true, true)
                 .AddEnvironmentVariables()
+                .AddUserSecrets<Program>()
                 .Build();
 
             var builder = new RepositoryBuilder()
