@@ -14,6 +14,7 @@ namespace SnConsoleClient
             IConfiguration config = new ConfigurationBuilder()               
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddEnvironmentVariables()
+                .AddUserSecrets<Program>()
                 .Build();
 
             var server = new ServerContext()
