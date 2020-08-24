@@ -11,10 +11,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Logging;
 using Microsoft.IdentityModel.Tokens;
 using SenseNet.Configuration;
-using SenseNet.ContentRepository;
-using SenseNet.ContentRepository.Security;
-using SenseNet.ContentRepository.Storage.Data.MsSqlClient;
-using SenseNet.Diagnostics;
 using SenseNet.Extensions.DependencyInjection;
 using SenseNet.Security.EFCSecurityStore;
 using SenseNet.Security.Messaging.RabbitMQ;
@@ -71,8 +67,26 @@ namespace SnWebApplication.Api.Sql.SearchService.TokenAuth
                     options.Groups.Add("/Root/IMS/Public/Administrators");
                 });
 
-            // [sensenet]: add allowed client SPA urls
-            services.AddSenseNetCors();
+            // [sensenet]: add sensenet services
+            services.AddSenseNet(Configuration, (repositoryBuilder, provider) =>
+                {
+                    repositoryBuilder
+                        .UseSecurityDataProvider(
+                            new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
+                        .UseSecurityMessageProvider(new RabbitMQMessageProvider())
+                        .UseLucene29CentralizedSearchEngineWithGrpc(Configuration["sensenet:search:service:address"], options =>
+                        {
+                            if (!Environment.IsDevelopment())
+                                return;
+
+                            // trust the server in a development environment
+                            options.HttpClient = new HttpClient(new HttpClientHandler
+                            {
+                                ServerCertificateCustomValidationCallback = (message, certificate2, arg3, arg4) => true
+                            });
+                            options.DisposeHttpClient = true;
+                        });
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -117,39 +131,6 @@ namespace SnWebApplication.Api.Sql.SearchService.TokenAuth
             {
                 endpoints.MapRazorPages();
             });
-        }
-
-        internal static RepositoryBuilder GetRepositoryBuilder(IConfiguration configuration, IHostEnvironment environment)
-        {
-            // assemble a SQL-specific repository
-
-            var repositoryBuilder = new RepositoryBuilder()
-                .UseConfiguration(configuration)
-                .UseLogger(new SnFileSystemEventLogger())
-                .UseTracer(new SnFileSystemTracer())
-                .UseAccessProvider(new UserAccessProvider())
-                .UseDataProvider(new MsSqlDataProvider())
-                .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
-                .UseSecurityMessageProvider(new RabbitMQMessageProvider())
-                .UseLucene29CentralizedSearchEngine()
-                .UseLucene29CentralizedGrpcServiceClient(configuration["sensenet:search:service:address"], options =>
-                {
-                    if (!environment.IsDevelopment()) 
-                        return;
-
-                    // trust the server in a development environment
-                    options.HttpClient = new HttpClient(new HttpClientHandler
-                    {
-                        ServerCertificateCustomValidationCallback = (message, certificate2, arg3, arg4) => true
-                    });
-                    options.DisposeHttpClient = true;
-                })
-                .StartWorkflowEngine(false)
-                .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
-
-            Providers.Instance.PropertyCollector = new EventPropertyCollector();
-
-            return repositoryBuilder;
         }
     }
 }

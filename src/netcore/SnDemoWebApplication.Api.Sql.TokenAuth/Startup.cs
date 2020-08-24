@@ -10,10 +10,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using SenseNet.Configuration;
-using SenseNet.ContentRepository;
-using SenseNet.ContentRepository.Security;
-using SenseNet.ContentRepository.Storage.Data.MsSqlClient;
-using SenseNet.Diagnostics;
 using SenseNet.Extensions.DependencyInjection;
 using SenseNet.Security.EFCSecurityStore;
 using SenseNet.Services.Core.Authentication;
@@ -68,8 +64,20 @@ namespace SnDemoWebApplication.Api.Sql.TokenAuth
                     options.Groups.Add("/Root/IMS/Public/Administrators");
                 });
 
-            // [sensenet]: add allowed client SPA urls
-            services.AddSenseNetCors();
+            // [sensenet]: add sensenet services
+            services.AddSenseNet(Configuration, (repositoryBuilder, provider) =>
+                {
+                    repositoryBuilder
+                        .UseSecurityDataProvider(
+                            new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
+                        .UseLucene29LocalSearchEngine(Path.Combine(System.Environment.CurrentDirectory, "App_Data",
+                            "LocalIndex"));
+                })
+                .AddAsposeDocumentPreviewProvider(options =>
+                {
+                    options.SkipLicenseCheck = Configuration.GetValue("sensenet:AsposePreviewProvider:SkipLicenseCheck", false);
+                })
+                .AddSenseNetClientTokenStore();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -119,27 +127,6 @@ namespace SnDemoWebApplication.Api.Sql.TokenAuth
                                                       "more information on how to call the REST API.");
                 });
             });
-        }
-
-        internal static RepositoryBuilder GetRepositoryBuilder(IConfiguration configuration, IHostEnvironment environment)
-        {
-            // assemble a SQL-specific repository
-
-            var repositoryBuilder = new RepositoryBuilder()
-                .UseConfiguration(configuration)
-                .UseLogger(new SnFileSystemEventLogger())
-                .UseTracer(new SnFileSystemTracer())
-                .UseAccessProvider(new UserAccessProvider())
-                .UseDataProvider(new MsSqlDataProvider())
-                .UseSecurityDataProvider(new EFCSecurityDataProvider(connectionString: ConnectionStrings.ConnectionString))
-                .UseLucene29LocalSearchEngine(Path.Combine(System.Environment.CurrentDirectory, "App_Data", "LocalIndex"))
-                .UseAsposeDocumentPreviewProvider(config => { config.SkipLicenseCheck = environment.IsDevelopment(); })
-                .StartWorkflowEngine(false)
-                .UseTraceCategories("Event", "Custom", "System") as RepositoryBuilder;
-
-            Providers.Instance.PropertyCollector = new EventPropertyCollector();
-
-            return repositoryBuilder;
         }
     }
 }
