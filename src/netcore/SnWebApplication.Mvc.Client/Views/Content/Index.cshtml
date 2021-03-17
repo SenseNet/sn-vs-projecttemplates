@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+@using SenseNet.Client
+@model SnContent
+
+<h1>Content browser</h1>
+
+<h3>@Model.Content.DisplayName</h3>
+
+<p>
+    <div>
+        [<a asp-controller="Content" asp-route-id="@Model.Content["ParentId"]">...</a>]
+    </div>
+    @foreach (var content in Model.Children)
+    {
+        <div>
+            <a asp-controller="Content" asp-route-id="@content.Id">@content.DisplayName</a>
+        </div>
+    }
+</p>
+
