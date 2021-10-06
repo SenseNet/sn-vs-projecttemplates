@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnDemoWebApplication.Api.Sq
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnConsoleClient.Template", "SnConsoleClient.Template\SnConsoleClient.Template.csproj", "{A4162918-10A6-4A15-8FF8-AAA3973F0618}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnWebApplication.Mvc.Client", "SnWebApplication.Mvc.Client\SnWebApplication.Mvc.Client.csproj", "{87F549C9-482E-4C44-BC27-7B94CADE6421}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnWebApplication.Mvc.Client", "SnWebApplication.Mvc.Client\SnWebApplication.Mvc.Client.csproj", "{87F549C9-482E-4C44-BC27-7B94CADE6421}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnWpfClient", "SnWpfClient\SnWpfClient.csproj", "{71555513-12CF-462D-A81F-82833E0D3A92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{87F549C9-482E-4C44-BC27-7B94CADE6421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87F549C9-482E-4C44-BC27-7B94CADE6421}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87F549C9-482E-4C44-BC27-7B94CADE6421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71555513-12CF-462D-A81F-82833E0D3A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71555513-12CF-462D-A81F-82833E0D3A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71555513-12CF-462D-A81F-82833E0D3A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71555513-12CF-462D-A81F-82833E0D3A92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
