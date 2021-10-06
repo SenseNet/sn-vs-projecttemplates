@@ -1,0 +1,8 @@
+{
+  "solution": {
+    "path": "SenseNet.Web.All.sln",
+    "projects": [
+      "SnConsoleClient\\SnConsoleClient.csproj"
+    ]
+  }
+}
