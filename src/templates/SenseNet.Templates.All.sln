@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnConsoleClient", "SnConsoleClient\SnConsoleClient.csproj", "{BFD5321D-1F8E-4474-AB07-8D07EE31C8DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "templatefiles", "templatefiles", "{E5C9B824-24A9-4AC4-B07E-1030648BFAE4}"
+	ProjectSection(SolutionItems) = preProject
+		SnConsoleClient\.template.config\template.json = SnConsoleClient\.template.config\template.json
+		SnConsoleClient.Empty\.template.config\template.json = SnConsoleClient.Empty\.template.config\template.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SnConsoleClient.Empty", "SnConsoleClient.Empty\SnConsoleClient.Empty.csproj", "{06ED046D-CF8C-4219-9288-6F843C6BA429}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFD5321D-1F8E-4474-AB07-8D07EE31C8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFD5321D-1F8E-4474-AB07-8D07EE31C8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFD5321D-1F8E-4474-AB07-8D07EE31C8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFD5321D-1F8E-4474-AB07-8D07EE31C8DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06ED046D-CF8C-4219-9288-6F843C6BA429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06ED046D-CF8C-4219-9288-6F843C6BA429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06ED046D-CF8C-4219-9288-6F843C6BA429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06ED046D-CF8C-4219-9288-6F843C6BA429}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {466A39AF-4A10-4C95-BB11-C388A250C24E}
+	EndGlobalSection
+EndGlobal
