@@ -289,3 +289,6 @@ __pycache__/
 
 **/App_Data/LuceneIndex
 **/App_Data/LocalIndex
+/src/templates/.vscode
+/src/templates/SnConsoleClient.Empty/.vscode
+/src/templates/SnConsoleClient/.vscode
