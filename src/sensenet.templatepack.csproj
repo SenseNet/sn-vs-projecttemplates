@@ -1,27 +1,33 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <PackageType>Template</PackageType>
-    <PackageVersion>0.1.0.6</PackageVersion>
-    <PackageId>SenseNet.Templates</PackageId>
-    <Title>SenseNet Project Templates</Title>
-    <Authors>tusmester</Authors>
-	<Product>sensenet Project Templates</Product>
-    <Description>Templates to use when creating an application for the sensenet platform.</Description>
-    <PackageTags>dotnet-new;templates;sensenet</PackageTags>
-	<PackageReleaseNotes>See release notes on GitHub.</PackageReleaseNotes>
+	<PropertyGroup>
+		<PackageType>Template</PackageType>
+		<PackageVersion>0.1.0.7</PackageVersion>
+		<PackageId>SenseNet.Templates</PackageId>
+		<Title>SenseNet Project Templates</Title>
+		<Authors>tusmester</Authors>
+		<Company>Sense/Net Inc.</Company>
+		<Copyright>Copyright © Sense/Net Inc.</Copyright>
+		<Product>sensenet Project Templates</Product>
+		<Description>Templates to use when creating an application for the sensenet platform.</Description>
+		<PackageTags>dotnet-new;templates;sensenet</PackageTags>
+		<PackageLicenseUrl>https://github.com/SenseNet/sensenet/blob/master/LICENSE</PackageLicenseUrl>
+		<PackageProjectUrl>https://github.com/SenseNet/sensenet</PackageProjectUrl>
+		<PackageIconUrl>https://raw.githubusercontent.com/SenseNet/sn-resources/master/images/sn-icon/sensenet-icon-64.png</PackageIconUrl>
+		<RepositoryUrl>https://github.com/SenseNet/sn-vs-projecttemplates.git</RepositoryUrl>
+		<PackageReleaseNotes>See release notes on GitHub.</PackageReleaseNotes>
 
-    <TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFramework>netstandard2.0</TargetFramework>
 
-    <IncludeContentInPack>true</IncludeContentInPack>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
-    <ContentTargetFolders>content</ContentTargetFolders>
-    <NoWarn>$(NoWarn);NU5128</NoWarn>
-  </PropertyGroup>
+		<IncludeContentInPack>true</IncludeContentInPack>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<ContentTargetFolders>content</ContentTargetFolders>
+		<NoWarn>$(NoWarn);NU5128</NoWarn>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**;templates\**\.vs\**" />
-    <Compile Remove="**\*" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**;templates\**\.vs\**" />
+		<Compile Remove="**\*" />
+	</ItemGroup>
 
 </Project>
