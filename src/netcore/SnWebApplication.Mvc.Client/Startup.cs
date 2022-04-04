@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SenseNet.Extensions.DependencyInjection;
+using SnWebApplication.Mvc.Client.Models;
 
 namespace SnWebApplication.Mvc.Client
 {
@@ -21,6 +22,8 @@ namespace SnWebApplication.Mvc.Client
         {
             services.AddSenseNetRepository(options => { Configuration.Bind("sensenet", options); });
             services.AddControllersWithViews();
+
+            services.Configure<ClientOptions>(options => { Configuration.Bind("client", options);});
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
