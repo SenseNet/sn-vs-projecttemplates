@@ -1,8 +1,9 @@
-﻿using IdentityModel.Client;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using SenseNet.Client;
+using SenseNet.Extensions.DependencyInjection;
 using System;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace SnConsoleClient
@@ -16,57 +17,26 @@ namespace SnConsoleClient
                 .AddEnvironmentVariables()
                 .AddUserSecrets<Program>()
                 .Build();
+            
+            var provider = new ServiceCollection()
+                .AddSenseNetRepository(options =>
+                {
+                    config.Bind("sensenet", options);
+                })
+                .AddLogging(logging => logging.AddConsole())
+                .BuildServiceProvider();
 
-            var server = new ServerContext()
+            var sf = provider.GetRequiredService<IServerContextFactory>();
+            var server = await sf.GetServerAsync();
+            
+            try
             {
-                Url = config["sensenet:RepositoryUrl"]
-            };
-
-            server.Authentication.AccessToken = await GetTokenAsync(config);
-
-            ClientContext.Current.AddServer(server);
-
-            // use client Content or RESTCaller apis to manage the repository
-            // var content = await Content.LoadAsync(path);
-            foreach (var child in await Content.LoadCollectionAsync("/Root"))
-            {
-                Console.WriteLine(child.Path);
+                //var folders = (await Content.LoadCollectionAsync("/Root/Content/SampleWorkspace", server)).ToArray();
             }
-        }
-
-        private static async Task<string> GetTokenAsync(IConfiguration config)
-        {
-            var authority = config["sensenet:Authentication:Authority"];
-
-            Console.WriteLine($"Requesting auth token from {authority}");
-
-            var client = new HttpClient();
-            var disco = await client.GetDiscoveryDocumentAsync(authority);
-            if (disco.IsError)
+            catch (Exception ex)
             {
-                Console.WriteLine(disco.Error);
-                return string.Empty;
+                Console.WriteLine(ex.Message);
             }
-
-            // request token
-            var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
-            {
-                Address = disco.TokenEndpoint,
-
-                ClientId = config["sensenet:Authentication:ClientId"],
-                ClientSecret = config["sensenet:Authentication:ClientSecret"],
-                Scope = config["sensenet:Authentication:Scope"]
-            });
-
-            if (tokenResponse.IsError)
-            {
-                Console.WriteLine(tokenResponse.Error);
-                return string.Empty;
-            }
-
-            Console.WriteLine("Token request was successful.");
-
-            return tokenResponse.AccessToken;
         }
     }
 }
