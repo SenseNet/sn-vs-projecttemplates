@@ -1,28 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using SenseNet.Client;
-using SenseNet.Client.Authentication;
 using SnWebApplication.Mvc.Client.Models;
 
 namespace SnWebApplication.Mvc.Client.Controllers
 {
     public class ContentController : Controller
     {
-        private readonly ITokenStore _tokenStore;
+        private readonly IServerContextFactory _serverFactory;
 
-        public ContentController(ITokenStore tokenStore)
+        public ContentController(IServerContextFactory serverFactory)
         {
-            _tokenStore = tokenStore;
+            _serverFactory = serverFactory;
         }
 
         public async Task<IActionResult> Index(int id = 0)
         {
             Content content;
 
-            var server = await GetSnServer();
+            // get the configured and authenticated server
+            var server = await _serverFactory.GetServerAsync();
 
             if (id == 0)
             {
@@ -42,22 +39,6 @@ namespace SnWebApplication.Mvc.Client.Controllers
                 Content = content,
                 Children = children
             });
-        }
-
-        private async Task<ServerContext> GetSnServer()
-        {
-            // define sensenet service url
-            var server = new ServerContext
-            {
-                Url = "https://example.sensenet.cloud"
-            };
-
-            // request and set the access token
-            server.Authentication.AccessToken = await _tokenStore.GetTokenAsync(server,
-                "",
-                "");
-
-            return server;
         }
     }
 }
